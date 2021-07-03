@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;900&display=swap);
-
+@import "scss/fontawesome.scss";
+// $fa-font-path: "@/assets/fontawesome-free-5.15.3-web/webfonts";
 *{
   margin: 0;
   padding: 0;
@@ -7,10 +8,10 @@
   border: 1px solid;
 }
 
-.dead-center-flex{
+.mobile-logo-flex{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -25,3 +26,5 @@ $font-title-md: normal 300 1.25em $font-stack;
 // 16px
 $font-text: normal 100 1em $font-stack;
  
+// colors:
+$sunset-brown: #91684A

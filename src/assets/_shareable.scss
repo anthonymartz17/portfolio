@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;900&display=swap);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+}
+
+.dead-center-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// fonts
+$font-stack: 'Poppins', sans-serif;
+// 24px
+$font-logo: normal 100 1.5em $font-stack;
+// 22px
+$font-title-lg: normal 500 1.375em $font-stack;
+// 20px
+$font-title-md: normal 300 1.25em $font-stack;
+// 16px
+$font-text: normal 100 1em $font-stack;
+ 

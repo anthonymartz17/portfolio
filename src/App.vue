@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    
     <section class="sect1">
       <!-- <div class="display-screen"> -->
           <img src="@/assets/sunset-simba.jpg" alt="home page image">
@@ -7,15 +8,23 @@
     </section>
     <section class="sect2">
       <header>
+      <i class="fas fa-bars fa-2x"></i>
+         
         <h1> Antonio Martinez</h1>
         
         <p>FRONT-END WEB DEVELOPER</p>
       </header>
       <nav>
          <app-main-nav class="nav-com"></app-main-nav>
-         <i class="fab fa-github-square"></i>
+      
       </nav>
     </section>
+   <footer>
+     
+       <a href="#"><i class="far fa-envelope fa-2x"></i></a>
+      <a href="#"><i class="fab fa-github fa-2x"></i></a>
+     
+   </footer>
    
     
   </div>
@@ -35,15 +44,27 @@ export default {
 
 .container{
   display:flex;
-  flex-direction: column-reverse;
-  height: 100vh;
-  background: $sunset-brown;
-  padding-top: 1em;
-  
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  height: calc(100vh - 4px);
+  // background: $sunset-brown;
+  // padding-top: 1em;
+
+footer{
+  flex: 1;
+  order: 3;
+  // background: red;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
   
 }
 .sect1{
-  flex: 3;
+   order: 2;
+  flex: 2;
   // background: $sunset-brown;
   p{
     font: $font-text
@@ -54,14 +75,20 @@ export default {
 }
 
 .sect2{
+  // background: blue;
+  order: 1;
   flex: 1;
   @extend .mobile-logo-flex;
   gap: 1em;
-  background: blue;
-  padding-right: 1.4em;
+  position: relative;
+i{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
  
   h1{
-    color:white;
+    // color:white;
     font: $font-logo;
     text-align: center;
   }

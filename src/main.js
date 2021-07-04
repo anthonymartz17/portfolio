@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import Footer from './components/Footer.vue'
+
+
+Vue.component('app-footer',Footer)
 
 Vue.config.productionTip = false
 

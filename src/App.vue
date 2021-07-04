@@ -5,6 +5,7 @@
       <!-- <div class="display-screen"> -->
           <img src="@/assets/sunset-simba.jpg" alt="home page image">
       <!-- </div> -->
+      <app-im-animation class="animation"></app-im-animation>
     </section>
     <section class="sect2">
       <header>
@@ -32,10 +33,12 @@
 <script>
 
 import Mainnav from '../src/components/Main-nav.vue';
+import IamAnimation from './components/IamAnimation.vue';
 
 export default {
   components:{
-    'app-main-nav': Mainnav
+    'app-main-nav': Mainnav,
+    'app-im-animation': IamAnimation,
   }
 }
 </script>
@@ -63,6 +66,7 @@ footer{
   
 }
 .sect1{
+  position: relative;
    order: 2;
   flex: 2;
   // background: $sunset-brown;
@@ -71,6 +75,11 @@ footer{
   }
   img{
     max-width: 100%;
+  }
+  .animation{
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
   }
 }
 
@@ -85,6 +94,7 @@ i{
   position: absolute;
   top: 20px;
   right: 20px;
+  color: $sunset-brown;
 }
  
   h1{

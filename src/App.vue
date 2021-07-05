@@ -16,13 +16,14 @@
       </div>
     </section>
 
-   <app-footer></app-footer>
+   
   
    
   </div>
     <app-about></app-about>
     <app-projects></app-projects>
     <app-contact></app-contact>
+    <app-footer></app-footer>
     
    
     </div>

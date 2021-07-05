@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="testing">
   <div class="container">
       <header>
         <nav>
@@ -9,27 +9,24 @@
         <h1> Antonio Martinez</h1>
         <p>FRONT-END WEB DEVELOPER</p>
       </header>
-      
-  
-    
     <section class="sect1">
-      <!-- <div class="display-screen"> -->
+      <div class="display-screen">
           <img src="@/assets/sunset-simba.jpg" alt="home page image">
-      <!-- </div> -->
-      <app-im-animation class="Home-page-text-animation"></app-im-animation>
+          <app-im-animation class="Home-page-text-animation"></app-im-animation>
+      </div>
     </section>
-   
-   <footer>
-     
-       <a href="#"><i class="far fa-envelope fa-2x"></i></a>
-      <a href="https://github.com/anthonymartz17?tab=repositories" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-     
-   </footer>
+
+   <app-footer></app-footer>
+  
    
   </div>
     <app-about></app-about>
     <app-projects></app-projects>
+    <app-contact></app-contact>
+   
     </div>
+
+    
 </template>
 <script>
 
@@ -37,6 +34,8 @@ import Navlinks from './components/Navlinks.vue';
 import IamAnimation from './components/IamAnimation.vue';
 import About from './components/About.vue';
 import Projects from './components/Projects.vue';
+import Contactpage from './components/Contactpage.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   components:{
@@ -44,36 +43,34 @@ export default {
     'app-im-animation': IamAnimation,
     'app-about': About,
     'app-projects': Projects,
+    'app-contact': Contactpage,
+    'app-footer': Footer,
   }
 }
 </script>
 
 <style lang="scss">
-
+.testing{
+  // background: green;
+}
 .container{
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: calc(100vh - 4px);
-  // background: $sunset-brown;
   padding-block: 1em;
 
-footer{
-  flex: 1;
-  // order: 3;
-  // background: red;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
-  
 }
 .sect1{
-  position: relative;
+ 
   //  order: 2;
   flex: 2;
   // background: $sunset-brown;
+
+  .display-screen{
+     position: relative;
+    
+  }
   p{
     font: $font-text
   }
@@ -98,6 +95,7 @@ footer{
    // order: 1;
     flex: 1;
     gap: 1em;
+    margin-block: .5em;
   
 
     nav {

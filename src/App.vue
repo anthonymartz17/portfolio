@@ -1,5 +1,16 @@
 <template>
+<div>
   <div class="container">
+      <header>
+        <nav>
+         <app-navlinks class="nav-component"></app-navlinks>
+         <i class="fas fa-bars fa-2x"></i>
+      </nav>
+        <h1> Antonio Martinez</h1>
+        <p>FRONT-END WEB DEVELOPER</p>
+      </header>
+      
+  
     
     <section class="sect1">
       <!-- <div class="display-screen"> -->
@@ -7,20 +18,7 @@
       <!-- </div> -->
       <app-im-animation class="Home-page-text-animation"></app-im-animation>
     </section>
-    <section class="sect2">
-      <header>
-        <nav>
-         <app-main-nav class="nav-component"></app-main-nav>
-         <i class="fas fa-bars fa-2x"></i>
-      </nav>
-    
-        
-        <h1> Antonio Martinez</h1>
-        
-        <p>FRONT-END WEB DEVELOPER</p>
-      </header>
-      
-    </section>
+   
    <footer>
      
        <a href="#"><i class="far fa-envelope fa-2x"></i></a>
@@ -28,18 +26,24 @@
      
    </footer>
    
-    
   </div>
+    <app-about></app-about>
+    <app-projects></app-projects>
+    </div>
 </template>
 <script>
 
-import Mainnav from '../src/components/Main-nav.vue';
+import Navlinks from './components/Navlinks.vue';
 import IamAnimation from './components/IamAnimation.vue';
+import About from './components/About.vue';
+import Projects from './components/Projects.vue';
 
 export default {
   components:{
-    'app-main-nav': Mainnav,
+    'app-navlinks': Navlinks,
     'app-im-animation': IamAnimation,
+    'app-about': About,
+    'app-projects': Projects,
   }
 }
 </script>
@@ -56,7 +60,7 @@ export default {
 
 footer{
   flex: 1;
-  order: 3;
+  // order: 3;
   // background: red;
   display:flex;
   justify-content: center;
@@ -67,7 +71,7 @@ footer{
 }
 .sect1{
   position: relative;
-   order: 2;
+  //  order: 2;
   flex: 2;
   // background: $sunset-brown;
   p{
@@ -83,18 +87,18 @@ footer{
   }
 }
 
-.sect2{
 
-  order: 1;
-  flex: 1;
-  gap: 1em;
+
+ 
   
 
   header{
     display: flex;
     flex-direction: column;
+   // order: 1;
+    flex: 1;
+    gap: 1em;
   
-  }
 
     nav {
     // background: blue;

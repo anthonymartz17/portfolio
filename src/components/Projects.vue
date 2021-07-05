@@ -64,7 +64,7 @@ export default {
 <style lang='scss'>
 
 .projects-container{
-  height: 100vh;
+  // height: 100vh;
   padding: 1em;
   display: flex;
   flex-direction: column;

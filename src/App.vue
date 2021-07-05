@@ -23,6 +23,7 @@
     <app-about></app-about>
     <app-projects></app-projects>
     <app-contact></app-contact>
+    
    
     </div>
 

@@ -5,25 +5,26 @@
       <!-- <div class="display-screen"> -->
           <img src="@/assets/sunset-simba.jpg" alt="home page image">
       <!-- </div> -->
-      <app-im-animation class="animation"></app-im-animation>
+      <app-im-animation class="Home-page-text-animation"></app-im-animation>
     </section>
     <section class="sect2">
       <header>
-      <i class="fas fa-bars fa-2x"></i>
-         
+        <nav>
+         <app-main-nav class="nav-component"></app-main-nav>
+         <i class="fas fa-bars fa-2x"></i>
+      </nav>
+    
+        
         <h1> Antonio Martinez</h1>
         
         <p>FRONT-END WEB DEVELOPER</p>
       </header>
-      <nav>
-         <app-main-nav class="nav-com"></app-main-nav>
       
-      </nav>
     </section>
    <footer>
      
        <a href="#"><i class="far fa-envelope fa-2x"></i></a>
-      <a href="#"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://github.com/anthonymartz17?tab=repositories" target="_blank"><i class="fab fa-github fa-2x"></i></a>
      
    </footer>
    
@@ -49,10 +50,9 @@ export default {
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
-
   height: calc(100vh - 4px);
   // background: $sunset-brown;
-  // padding-top: 1em;
+  padding-block: 1em;
 
 footer{
   flex: 1;
@@ -76,7 +76,7 @@ footer{
   img{
     max-width: 100%;
   }
-  .animation{
+  .Home-page-text-animation{
     position: absolute;
     bottom: 40px;
     left: 60px;
@@ -84,14 +84,35 @@ footer{
 }
 
 .sect2{
-  // background: blue;
+
   order: 1;
   flex: 1;
-  @extend .mobile-logo-flex;
   gap: 1em;
-  position: relative;
+  
+
+  header{
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+    nav {
+    // background: blue;
+    width: 100vw;
+    padding-inline: .5em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+  img{
+    max-width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+ 
 i{
-  position: absolute;
+ 
   top: 20px;
   right: 20px;
   color: $sunset-brown;
@@ -105,9 +126,11 @@ i{
   p{
     font: $font-title-md;
     text-align: center;
+    border-block: 1px solid $sunset-brown;
+    padding-block: .5em;
   }
 }
-.nav-com{
+.nav-component{
   display: none;
 }
 

@@ -64,26 +64,34 @@ export default {
 <style lang='scss'>
 
 .projects-container{
-  // height: 100vh;
+ 
+ 
   padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-  
+   
+   h2{
+     text-align: center;
+     margin: 1em;
+   }
   p{
     text-align: center;
   }
 
   section{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+   @include tablet{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1em;
+     
+ }
   }
 
 }
 
 .each-project{
+  @include tablet{
+    margin-block: 0;
+  }
+  margin-block: 1em;
   padding-block: .5em;
   border: 1px solid rgba(0, 0, 0, 0.11);
   display: flex;

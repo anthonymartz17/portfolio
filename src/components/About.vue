@@ -46,33 +46,41 @@ export default {
 <style lang='scss'>
 
 .about-container{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding:1em;
-
+@include tablet{
+  margin-block: 2em;
+  padding-block: 3em;
+  height: 80vh;
+}
+h2{
+  text-align: center;
+  margin: .5em 1em;
+}
   p{
     text-align: center;
+    padding: 1em;
+    margin-bottom: .5em;
+    
   }
 
   .about-sect{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-
+    @include tablet{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: baseline;
+      margin-block: 1em;
+      
+    };
+    padding: 1em;
+   
     h3{
       text-align: center;
+      margin-bottom: .5em;
+      
     }
     
-
      &-techskills, &-otherskills{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .3em;
+    text-align: center;
+    padding: 1em;
   }
 
     

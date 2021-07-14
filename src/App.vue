@@ -4,7 +4,12 @@
       <header>
         <nav>
          <app-navlinks class="nav-component"></app-navlinks>
-         <i class="fas fa-bars fa-2x"></i>
+         <!-- <i class="fas fa-bars fa-2x"></i> -->
+         <div class="hamburguer">
+           <span></span>
+           <span></span>
+           <span></span>
+         </div>
       </nav>
         <h1> Antonio Martinez</h1>
         <p>FRONT-END WEB DEVELOPER</p>
@@ -52,8 +57,11 @@ export default {
 </script>
 
 <style lang="scss">
-.testing{
-  // background: green;
+.hamburguer{
+  span{
+    background: black;
+    width: 10px;
+  }
 }
 .container{
   display:flex;
@@ -71,6 +79,8 @@ export default {
 
   .display-screen{
      position: relative;
+     width: 100%;
+     
     
   }
   p{
@@ -78,6 +88,7 @@ export default {
   }
   img{
     max-width: 100%;
+    
   }
   .Home-page-text-animation{
     position: absolute;
@@ -92,12 +103,9 @@ export default {
   
 
   header{
-    display: flex;
-    flex-direction: column;
-   // order: 1;
-    flex: 1;
+  
     gap: 1em;
-    margin-block: .5em;
+    margin:2.5em .5em;
   
 
     nav {

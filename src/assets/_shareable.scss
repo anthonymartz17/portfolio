@@ -1,6 +1,23 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;900&display=swap);
 
+  // viewport
+   $tablet: 48em;
+// --------------------------------------------------
 
+   // fonts
+$font-stack: 'Poppins', sans-serif;
+// 24px
+$font-logo: normal 100 1.5em $font-stack;
+// 22px
+$font-title-lg: normal 500 1.375em $font-stack;
+// 20px
+$font-title-md: normal 300 1.25em $font-stack;
+// 16px
+$font-text: normal 100 1em $font-stack;
+// --------------------------------------------------
+
+// colors:
+$sunset-brown: #91684A;
 
 // $fa-font-path: "@/assets/fontawesome-free-5.15.3-web/webfonts";
 *{
@@ -17,28 +34,26 @@
   align-items: center;
 }
 
-// fonts
-$font-stack: 'Poppins', sans-serif;
-// 24px
-$font-logo: normal 100 1.5em $font-stack;
-// 22px
-$font-title-lg: normal 500 1.375em $font-stack;
-// 20px
-$font-title-md: normal 300 1.25em $font-stack;
-// 16px
-$font-text: normal 100 1em $font-stack;
+
  
-// colors:
-$sunset-brown: #91684A;
+
 
 
 a{
   text-decoration: none;
-  color: $sunset-brown;
+ 
   
 }
 ul{
   list-style: none;
   // text-align: center;
   text-align: center;
+}
+
+
+// viewport for tablets
+@mixin tablet {
+  @media (min-width:#{$tablet}){
+    @content;  
+  }
 }

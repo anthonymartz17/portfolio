@@ -29,35 +29,49 @@ export default {
 <style lang='scss'>
 
 .contact-container{
+
+  @include tablet{
+    padding: 3em;
+  }
   height: 70vh;
   padding-block: 2em;
-  gap: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 1em;
-  // background: red;
+  
+  
+  h2{
+    text-align: center;
+    margin:1em;
+  }
 
   p{
     text-align: center;
   }
   .contact-info{
+      @include tablet{
+       padding: 2em;
+       
+  }
     width: 100%;
     height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // background: blue;
     margin-top: 2em;
-    gap: 2em;
+  
 
     div{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5em;
+       text-align: center;
       padding-block: .5em;
+      margin-block: 1em;
+      padding: 1em;
+      border: 1px solid rgba(0, 0, 0, 0.308);
+      transition: all 250ms ease-in-out;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.178);
+      cursor: pointer;
     }
+
+    div:hover{
+      background: black;
+      color: white;
+    }
+    
   }
 }
 

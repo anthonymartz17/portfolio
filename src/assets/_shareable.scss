@@ -3,7 +3,16 @@
   // viewport
    $tablet: 48em;
 // --------------------------------------------------
-
+// colors:
+$sunset-brown: #91684A;
+$dark-brown:#5E454B;
+$light-dark:#C1AC95;
+$light:#F5F4F4;
+$light-cream:#FAEBE0;
+$light-blue:#A1CAE2;
+$light-green:#C9E4C5;
+$dark-green:#C9E4C5;
+// -------------------------------------------------
    // fonts
 $font-stack: 'Poppins', sans-serif;
 // 24px
@@ -16,8 +25,7 @@ $font-title-md: normal 300 1.25em $font-stack;
 $font-text: normal 100 1em $font-stack;
 // --------------------------------------------------
 
-// colors:
-$sunset-brown: #91684A;
+
 
 // $fa-font-path: "@/assets/fontawesome-free-5.15.3-web/webfonts";
 *{

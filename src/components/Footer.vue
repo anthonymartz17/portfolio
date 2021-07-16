@@ -1,6 +1,6 @@
 <template>
-  <div>
-     <footer>
+  <div class="footer">
+     
        <div class="contact-icons">
        <a href="#"><i class="far fa-envelope"></i></a>
 
@@ -11,12 +11,12 @@
       <a href="#"><i class="fab fa-facebook-square"></i></a>
       </div>
       <small>© {{new Date().getFullYear()}} Antonio Martinez</small>
-   </footer>
+  
   </div>
 </template>
 
 <style lang='scss'>
-footer{
+.footer{
   height: 30vh;
   background: black;
   flex: 1;

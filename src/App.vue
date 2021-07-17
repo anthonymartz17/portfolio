@@ -12,7 +12,7 @@
         </nav>
       </aside>
       <main>
-        
+        <routerView/>
       </main>
       <footer>
           <app-footer></app-footer>
@@ -71,7 +71,7 @@ export default {
 //   }
 // }
 .container{
-  background: $white;
+  background: $light;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 6fr 1fr;
@@ -86,10 +86,10 @@ export default {
 
   header{
     position: relative;
-    background: $light;
+    background:$white;
    grid-area: header;
     gap: 1em;
- box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   
   
 
@@ -131,10 +131,10 @@ aside{
   grid-template-rows: 1fr 7fr;
 
   .logo{
-    display: grid;
-    place-items: center;
+    display: flex;
+    padding-left: 2.6em;
+    align-items: center;
     background: $logo-background;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     font:$font-title-lg;
     color: $light;
   }
@@ -145,6 +145,9 @@ aside{
 
 main{
   grid-area: main;
+  //  background: blue;
+  
+  
   
 }
 footer{

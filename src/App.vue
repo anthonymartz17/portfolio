@@ -3,19 +3,19 @@
   <div class="container">
       <header>
         <h1> Antonio Martinez</h1>
-        <p>FRONT-END WEB DEVELOPER</p>
+        <!-- <p>FRONT-END WEB DEVELOPER</p> -->
       </header>
       <aside>
         <div class="logo">LOGO</div>
         <nav>
-          asdf
+        <app-navlinks></app-navlinks>
         </nav>
       </aside>
       <main>
-           asdfasdf
+        
       </main>
       <footer>
-asdfasd
+          <app-footer></app-footer>
       </footer>
 
 
@@ -34,8 +34,8 @@ asdfasd
   </div>
     <!-- <app-about></app-about>
     <app-projects></app-projects>
-    <app-contact></app-contact>
-    <app-footer></app-footer> -->
+    <app-contact></app-contact>-->
+     
     
    
     </div>
@@ -44,22 +44,22 @@ asdfasd
 </template>
 <script>
 
-// import Navlinks from './components/Navlinks.vue';
+import Navlinks from './components/Navlinks.vue';
 // import IamAnimation from './components/IamAnimation.vue';
 // import About from './components/About.vue';
 // import Projects from './components/Projects.vue';
 // import Contactpage from './components/Contactpage.vue';
-// import Footer from './components/Footer.vue';
+import Footer from './components/Footer.vue';
 
 export default {
-  // components:{
-  //   'app-navlinks': Navlinks,
+  components:{
+    'app-navlinks': Navlinks,
   //   'app-im-animation': IamAnimation,
   //   'app-about': About,
   //   'app-projects': Projects,
   //   'app-contact': Contactpage,
-  //   'app-footer': Footer,
-  // }
+    'app-footer': Footer,
+  }
 }
 </script>
 
@@ -71,7 +71,7 @@ export default {
 //   }
 // }
 .container{
-  background: $light;
+  background: $white;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 6fr 1fr;
@@ -85,9 +85,11 @@ export default {
   
 
   header{
-    background: red;
+    position: relative;
+    background: $light;
    grid-area: header;
     gap: 1em;
+ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   
   
 
@@ -98,44 +100,56 @@ export default {
     border-radius: 50%;
   }
  
-i{
+// i{
  
-  top: 20px;
-  right: 20px;
-  color: $sunset-brown;
-}
+//   top: 20px;
+//   right: 20px;
+//   color: $sunset-brown;
+// }
  
   h1{
-    // color:white;
+    
     font: $font-logo;
     text-align: center;
+    position: absolute;
+    left: 3em;
+    opacity: .08;
+    
   }
-  p{
-    font: $font-title-md;
-    text-align: center;
-    border-block: 1px solid $sunset-brown;
-    padding-block: .5em;
-  }
+  // p{
+  //   font: $font-title-md;
+  //   text-align: center;
+  //   border-block: 1px solid $sunset-brown;
+  //   padding-block: .5em;
+  // }
 }
 
 aside{
-  background: black;
+  
   grid-area: aside;
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+
   .logo{
-    background: $light-green;
+    display: grid;
+    place-items: center;
+    background: $logo-background;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font:$font-title-lg;
+    color: $light;
   }
   nav{
-    background: $dark-brown;
+    background: $dark;
   }
 }
 
 main{
   grid-area: main;
-  background: $light-blue;
+  
 }
 footer{
   grid-area: footer;
-  background: $light-dark;
+  // background: $light-dark;
 
 }
 

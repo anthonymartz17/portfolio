@@ -4,23 +4,21 @@
    $tablet: 48em;
 // --------------------------------------------------
 // colors:
-$sunset-brown: #91684A;
-$dark-brown:#5E454B;
-$light-dark:#C1AC95;
+
+$dark:#534E52;
 $light:#F5F4F4;
-$light-cream:#FAEBE0;
-$light-blue:#A1CAE2;
-$light-green:#C9E4C5;
-$dark-green:#C9E4C5;
+$white:#FBF6F0;
+$logo-background:#39A2DB;
+
 // -------------------------------------------------
    // fonts
 $font-stack: 'Poppins', sans-serif;
+
+$font-logo: normal 900 5em $font-stack;
 // 24px
-$font-logo: normal 100 1.5em $font-stack;
-// 22px
-$font-title-lg: normal 500 1.375em $font-stack;
-// 20px
-$font-title-md: normal 300 1.25em $font-stack;
+$font-title-lg: normal 500 1.5em $font-stack;
+// 16px
+$font-title-md: normal 400 1em $font-stack;
 // 16px
 $font-text: normal 100 1em $font-stack;
 // --------------------------------------------------

@@ -52,7 +52,7 @@
     border-bottom: 1px solid transparent;
       
      &:hover{
-       color: $logo-background;
+       color: $logo-bg;
       
     }
 

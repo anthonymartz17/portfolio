@@ -2,12 +2,10 @@
   <div>
     <ul v-for="(link,key) in links" :key="key">
       <li :id="link.id" :class="{active:link.active}">
-       <router-link :to="{path:link.path}" @click.native="addActive(link,$event)" :class="{active: link.isActive, navs:true}">
-           <i :class="[link.class]"></i>
-           <p> {{link.link}}</p>
-
+       <router-link :to="{path:link.path}" @click.native="addActive(link,$event)" :class="{active: link.isActive, tabs:true}">
+          <i :class="[link.class]"></i>
+          <p> {{link.link}}</p>
        </router-link>
-
       </li>
     </ul>
   </div>
@@ -48,9 +46,9 @@ export default {
 <style lang='scss'>
 
 .active{
-  color: $logo-background;
+  color: $logo-bg;
 }
- .navs{
+ .tabs{
        display: flex;
        align-items: baseline;
        padding: 1em 2em;

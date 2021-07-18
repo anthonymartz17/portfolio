@@ -46,7 +46,6 @@
 
 import Navlinks from './components/Navlinks.vue';
 // import IamAnimation from './components/IamAnimation.vue';
-// import About from './components/About.vue';
 // import Projects from './components/Projects.vue';
 // import Contactpage from './components/Contactpage.vue';
 import Footer from './components/Footer.vue';
@@ -94,11 +93,11 @@ export default {
   
 
   
-  img{
-    max-width: 70px;
-    height: 70px;
-    border-radius: 50%;
-  }
+  // img{
+  //   max-width: 70px;
+  //   height: 70px;
+  //   border-radius: 50%;
+  // }
  
 // i{
  
@@ -134,7 +133,7 @@ aside{
     display: flex;
     padding-left: 2.6em;
     align-items: center;
-    background: $logo-background;
+    background: $logo-bg;
     font:$font-title-lg;
     color: $light;
   }

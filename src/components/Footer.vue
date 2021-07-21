@@ -1,19 +1,27 @@
 <template>
   <div class="footer">
-     
-       <div class="contact-icons">
-       <a href="#"><i class="far fa-envelope"></i></a>
-
-      <a href="https://github.com/anthonymartz17?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
-
-      <a href="#"><i class="fab fa-instagram"></i></a>
-
-      <a href="#"><i class="fab fa-facebook-square"></i></a>
-      </div>
-      <small>© {{new Date().getFullYear()}} Antonio Martinez</small>
-  
+   <ul class="contact-icons">
+     <li v-for="(contact, key) in contacts" :key="key" >
+      <a :href="contact.media" target="_blank"><i :class=[contact.icon]></i></a>
+     </li>
+   </ul>
+     <small>© {{new Date().getFullYear()}} Antonio Martinez</small>
   </div>
 </template>
+<script>
+export default {
+  data(){
+    return{
+      contacts:[
+        {media:"https://github.com/anthonymartz17?tab=repositories", icon:"fab fa-github"},
+        {media:"https://www.instagram.com/anthonymartz17/", icon:"fab fa-instagram"},
+        {media:"https://www.facebook.com/", icon:"fab fa-facebook-square"},
+        
+      ]
+    }
+  }
+}
+</script>
 
 <style lang='scss'>
 .footer{
@@ -28,12 +36,12 @@
   align-items: center;
   gap: 1em;
 
+
   .contact-icons{
      
     display: flex;
     justify-content: space-evenly;
     width: 40%;
-    
 
    
   }

@@ -34,14 +34,13 @@ export default {
 
 <style lang='scss'>
 .home-container{
-
+  // background: red;
   padding: 2em 3em;
-   height: 74vh;
 
    h2{
        font:$font-title-lg;
        color: $dark;
-       align-self: flex-start;
+      //  align-self: flex-start;
    }
 
 }
@@ -52,7 +51,7 @@ export default {
   background: $logo-bg;
   height: 60vh;
   width: 100%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: $bx-shadow;
   border-radius: 5px;
    position: relative;
 

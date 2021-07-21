@@ -1,8 +1,8 @@
 <template>
   <div>
-    <ul v-for="(link,key) in links" :key="key">
-      <li :id="link.id" :class="{active:link.active}">
-       <router-link :to="{path:link.path}" @click.native="addActive(link,$event)" :class="{active: link.isActive, tabs:true}">
+    <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
+      <li>
+       <router-link :to="{path:link.path}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
        </router-link>
@@ -18,26 +18,26 @@ export default {
       
       
       links:[
-        {id:1, link:"Home", class:"fas fa-home", isActive:true, path:'/'},
-        {id:2, link:"About", class:"far fa-address-card", isActive:false, path:'/about'},
-        {id:3, link:"Projects", class:"fas fa-briefcase",isActive:false, path:'/projects'},
-        {id:4, link:"Contact", class:"far fa-envelope",isActive:false, path:'/contact'},
+        {id:1, link:"Home", class:"fas fa-home", path:'/'},
+        {id:2, link:"About", class:"far fa-address-card", path:'/about'},
+        {id:3, link:"Projects", class:"fas fa-briefcase", path:'/projects'},
+        {id:4, link:"Contact", class:"far fa-envelope", path:'/contact'},
       ]
     }
   },
   methods:{
-    addActive(link,e){
+    // addActive(link,e){
     
-        this.links.forEach(one =>{
-          one.isActive = false 
-        })
-        if(e.target.parentElement.id == link.id){
-          link.isActive = true
+    //     this.links.forEach(one =>{
+    //       one.isActive = false 
+    //     })
+    //     if(e.target.parentElement.id == link.id){
+    //       link.isActive = true
   
       
-      }
-            // console.log('no se lo otro, pero yo toy funcionando')  
-    }
+    //   }
+    //         // console.log('no se lo otro, pero yo toy funcionando')  
+    // }
   }
 
 }
@@ -45,7 +45,7 @@ export default {
 
 <style lang='scss'>
 
-.active{
+a.router-link-active{
   color: $logo-bg;
 }
  .tabs{
@@ -59,7 +59,7 @@ export default {
     }
 
 
-ul{
+.side-bar-links{
    &:last-child{
       border-bottom: 2px solid darken($dark, 5%);
 

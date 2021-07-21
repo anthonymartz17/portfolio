@@ -88,7 +88,7 @@ export default {
     background:$white;
    grid-area: header;
     gap: 1em;
-   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+   box-shadow: $bx-shadow;
   
   
 
@@ -112,7 +112,9 @@ export default {
     text-align: center;
     position: absolute;
     left: 3em;
+    top: -.15em;
     opacity: .08;
+    // background:red;
     
   }
   // p{
@@ -144,9 +146,7 @@ aside{
 
 main{
   grid-area: main;
-  //  background: blue;
-  
-  
+  overflow: hidden;  
   
 }
 footer{

@@ -10,6 +10,9 @@ $light:#F5F4F4;
 $white:white;
 $logo-bg:#39A2DB;
 
+// box-shadows-----------------------------------
+$bx-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
 // -------------------------------------------------
    // fonts
 $font-stack: 'Poppins', sans-serif;
@@ -20,7 +23,7 @@ $font-title-lg: normal 500 1.5em $font-stack;
 // 16px
 $font-title-md: normal 400 1em $font-stack;
 // 16px
-$font-text: normal 100 1em $font-stack;
+$font-text: normal 400 1em $font-stack;
 // --------------------------------------------------
 
 
@@ -32,6 +35,7 @@ $font-text: normal 100 1em $font-stack;
   box-sizing: border-box;
   // border: 1px solid;
 }
+
 
 .mobile-logo-flex{
   display: flex;

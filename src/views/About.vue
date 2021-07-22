@@ -4,39 +4,28 @@
       <h2>{{aboutHeading}}</h2>
       <p>{{aboutPersonalDescription}}</p>
       
-      <section class="about-sect">
-        <div class="about-sect-techskills">
-        <div class="about-sect-skills-title">
-          <i class="fas fa-laptop-code fa-2x"></i>
-          <h3>Technical Skills</h3>
+      <div class="about-skills">
+        <div class="about-skills-techskills">
+          <div class="about-skills-title">
+            <i class="fas fa-laptop-code fa-2x"></i>
+            <h5>Technical Skills</h5>
           </div>
-          <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>Vue.js/Vuex</li>
-            <li>Bootstrap</li>
-            <li>Sass</li>
+          <ul class="about-skills-list">
+            <li v-for="(skill, key) in techSkills" :key="key">{{skill}}</li>
           </ul>
         </div>
       
-        <div class="about-sect-otherskills">
-          <div class="about-sect-skills-title">
-          <i class="fas fa-hands-helping fa-2x"></i>
-          <h3>Other Skills</h3>
+        <div class="about-skills-otherskills">
+          <div class="about-skills-title">
+            <i class="fas fa-hands-helping fa-2x"></i>
+            <h5>Other Skills</h5>
           </div>
           <ul>
-            <li>Teamwork</li>
-            <li>Problem-Solving</li>
-            <li>Adaptability</li>
-            <li>Resilience</li>
-            <li>Willingness to learn</li>
-            <li>Empathy</li>
-            <li>Communication</li>
+            <li  v-for="(skill, key) in otherSkills" :key="key">{{skill}}</li>
           </ul>
         </div>
     
-      </section>
+      </div>
     </div>
   </div>
 </template>
@@ -46,9 +35,12 @@
 export default {
   data(){
     return{
-
+      // about component content
       aboutHeading:'About Me',
       aboutPersonalDescription:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates dolorum officiis autem quos sunt enim eligendi vitae illo, veniam nisi perspiciatis alias, expedita impedit voluptas accusantium? Minima, aliquid natus iste fugiat culpa illo quod assumenda neque libero, nulla, labore soluta asperiores ipsam doloremque! Cupiditate, fugit est? Porro dignissimos eaque molestias!',
+      techSkills:["HTML5","CSS3","JavaScript","Vue.js/Vuex","Bootstrap","Sass"],
+      otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"]
+            
     }
   }
 
@@ -77,29 +69,28 @@ h2{
     
   }
 
-  .about-sect{
-    @include tablet{
-      display: flex;
-      justify-content: space-evenly;
-      align-items: baseline;
-      margin-block: 1em;
-      
-    };
-    padding: 1em;
+  .about-skills{
    
-    h3{
-      text-align: center;
-      margin-bottom: .5em;
-      
-    }
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5em;
+    padding: 1em;
+
     
+    &-title{
+      text-align: center;
+      font: $font-title-lg;
+    }
    
      &-techskills, &-otherskills{
-   display: flex;
-   align-items: center;
-   gap: 3;
+       height: 35vh;
+       flex: 1;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       position: relative;
+       padding-inline: 5em;
    
-    padding: 1em;
     border:1px solid lighten( $dark, 50%);
     // background: $logo-bg;
     color: $dark;
@@ -107,13 +98,23 @@ h2{
     box-shadow: $bx-shadow;
     font:$font-text;
 
-
     ul{
       text-align: start;
     }
-    
-
   }
+  &-list::before{
+
+      content: ':[';
+      position: absolute;
+      top: .1em;
+      right: 1.2em;
+      font-weight: 100;
+      font-size: 10em;
+      color: $logo-bg;
+      opacity: .5;
+  
+      
+    }
 
  
 

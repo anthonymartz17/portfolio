@@ -6,13 +6,13 @@
         <!-- <p>FRONT-END WEB DEVELOPER</p> -->
       </header>
       <aside>
-        <div class="logo">LOGO</div>
+        <div class="logo">A-MARTZ</div>
         <nav>
         <app-navlinks></app-navlinks>
         </nav>
       </aside>
       <main>
-        <routerView/>
+        <routerView />
       </main>
       <footer>
           <app-footer></app-footer>

@@ -35,7 +35,7 @@ export default {
 <style lang='scss'>
 .home-container{
   // background: red;
-  padding: 2em 3em;
+  margin: 2em 3em;
 
    h2{
        font:$font-title-lg;

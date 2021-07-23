@@ -8,7 +8,7 @@
     <div class="each-project project1">
       <h3>To Do APP</h3>
       <div class="img-container">
-        <img src="@/assets/todoApp.png" alt="">
+        <img src="@/assets/images/todoApp.png" alt="">
       </div>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
       <div class="btn-container">
@@ -19,7 +19,7 @@
     <div class="each-project project2">
       <h3>CRUD Maintance Project</h3>
       <div class="img-container">
-        <img src="@/assets/crudMaintance.png" alt="">
+        <img src="@/assets/images/crudMaintance.png" alt="">
       </div>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
       <div class="btn-container">
@@ -30,7 +30,7 @@
     <div class="each-project project3">
       <h3>Github Finder</h3>
       <div class="img-container">
-        <img src="@/assets/github-finder.png" alt="">
+        <img src="@/assets/images/github-finder.png" alt="">
       </div>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
       <div class="btn-container">
@@ -41,7 +41,7 @@
     <div class="each-project project4">
       <h3>Weather App</h3>
       <div class="img-container">
-        <img src="@/assets/weatherApp.png" alt="">
+        <img src="@/assets/images/weatherApp.png" alt="">
       </div>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
       <div class="btn-container">
@@ -111,7 +111,7 @@ export default {
     
 
     a{
-      background: $sunset-brown;
+      // background: $sunset-brown;
       color: white;
       text-transform: uppercase;
       font-weight: 300;

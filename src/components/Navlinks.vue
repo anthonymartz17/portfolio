@@ -2,7 +2,7 @@
   <div>
     <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
       <li>
-       <router-link :to="{path:link.path}" :class="{tabs:true}">
+       <router-link :to="{name:link.name}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
        </router-link>
@@ -18,10 +18,10 @@ export default {
       
       
       links:[
-        {id:1, link:"Home", class:"fas fa-home", path:'/'},
-        {id:2, link:"About", class:"far fa-address-card", path:'/about'},
-        {id:3, link:"Projects", class:"fas fa-briefcase", path:'/projects'},
-        {id:4, link:"Contact", class:"far fa-envelope", path:'/contact'},
+        {id:1, link:"Home", class:"fas fa-home", name:'Home'},
+        {id:2, link:"About", class:"far fa-address-card", name:'About'},
+        {id:3, link:"Projects", class:"fas fa-briefcase", name:'Projects'},
+        {id:4, link:"Contact", class:"far fa-envelope", name:'Contact'},
       ]
     }
   },

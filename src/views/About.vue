@@ -51,7 +51,7 @@ export default {
 
 
 .about-container{
-  padding: 2em 3em;
+  margin: 2em 3em;
   height: 74vh;
  
    

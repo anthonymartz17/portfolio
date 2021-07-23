@@ -29,22 +29,17 @@ export default {
 <style lang='scss'>
 
 .contact-container{
+ background: red;
+  height: 74vh;
+  margin: 2em 3em;
+  
+  
+  // h2{
 
-  @include tablet{
-    padding: 3em;
-  }
-  height: 70vh;
-  padding-block: 2em;
-  margin: 1em;
-  
-  
-  h2{
-    text-align: center;
-    margin:1em;
-  }
+  // }
 
   p{
-    text-align: center;
+    
   }
   .contact-info{
       @include tablet{

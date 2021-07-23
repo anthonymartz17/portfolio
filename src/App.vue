@@ -12,7 +12,7 @@
         </nav>
       </aside>
       <main>
-        <routerView />
+        <routerView/>
       </main>
       <footer>
           <app-footer></app-footer>

@@ -7,7 +7,8 @@
           <div class="overlay"></div>
          </div>
         <div class="greeting-card-text">
-         <h3>Hi, my name is Antonio Martinez And I'm glad to have you here</h3>
+          <p >Hello!</p>
+          <p>I'm Antonio, a front-end dev in NY.</p>
          <!-- <app-home-text-animation></app-home-text-animation> -->
         </div>
       </div>
@@ -76,8 +77,10 @@ export default {
 }
 &-text{
   display: flex;
+  flex-direction: column;
   justify-content:center;
-  align-items: center;
+  align-items: flex-start;
+  padding-left: 7em;
   position: absolute;
   right: 0px;
   width: 65%;
@@ -88,11 +91,6 @@ export default {
   font:$font-title-lg;
   color: $dark;
 
-  
-  h3{
-    width: 65%;
-    line-height: 1.6;
-  }
 
 }
 }

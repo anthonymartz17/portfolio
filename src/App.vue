@@ -6,7 +6,9 @@
         <!-- <p>FRONT-END WEB DEVELOPER</p> -->
       </header>
       <aside>
-        <div class="logo">A-MARTZ</div>
+        <div class="logo">
+          <p>Antonio Martinez</p>
+          </div>
         <nav>
         <app-navlinks></app-navlinks>
         </nav>
@@ -132,12 +134,19 @@ aside{
   grid-template-rows: 1fr 7fr;
 
   .logo{
+    
     display: flex;
     padding-left: 2.6em;
     align-items: center;
     background: $logo-bg;
-    font:$font-title-lg;
+    font:$font-logo-name;
     color: $light;
+
+    p{
+    
+      border-right: 1px solid $white;
+      padding-right: .5em;
+    }
   }
   nav{
     background: $dark;

@@ -12,7 +12,8 @@ $logo-bg:#39A2DB;
 
 // box-shadows-----------------------------------
 $bx-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
+ 
+// $bx-shadow-blue-corner:
 // -------------------------------------------------
    // fonts
 $font-stack: 'Poppins', sans-serif;
@@ -33,7 +34,7 @@ $font-text: normal 400 1em $font-stack;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid;
+  // border: 1px solid;
 }
 
 

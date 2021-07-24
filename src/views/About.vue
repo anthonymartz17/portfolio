@@ -20,7 +20,7 @@
             <i class="fas fa-hands-helping fa-2x"></i>
             <h5>Other Skills</h5>
           </div>
-          <ul>
+          <ul class="about-skills-list">
             <li  v-for="(skill, key) in otherSkills" :key="key">{{skill}}</li>
           </ul>
         </div>
@@ -64,7 +64,6 @@ h2{
   p{
     font:$font-text;
     color: $dark;
-    padding: 1em;
     margin-block: 1em;
     
   }
@@ -73,51 +72,59 @@ h2{
    
     display: flex;
     justify-content: space-evenly;
-    gap: 1.5em;
-    padding: 1em;
+    gap: 5em;
+    margin-block: 3em;
 
     
     &-title{
-      text-align: center;
+      // text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: .5em;
       font: $font-title-lg;
+      flex: 1;
+      background:$logo-bg;
+      color: $white;
+    }
+
+     &-list {
+       
+       padding: 3em;
+       border-right: 1px solid lighten($dark, 40%);
+      //  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+     
+       
+
+      text-align: start;
+      flex: 1;
     }
    
      &-techskills, &-otherskills{
        height: 35vh;
        flex: 1;
        display: flex;
-       align-items: center;
-       justify-content: space-between;
+       gap: 2em;
+       box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+       color: $dark;
        position: relative;
-       padding-inline: 5em;
-   
-    border:1px solid lighten( $dark, 50%);
-    // background: $logo-bg;
-    color: $dark;
-    position: relative;
-    box-shadow: $bx-shadow;
+    
+    
     font:$font-text;
 
-    ul{
-      text-align: start;
+   
+   
+    li{
+      line-height: 1.8;
+    }
+    li::before{
+      content: '-';
+      font-weight: 900;
+      padding-right: .4em;
+      color: $dark;
     }
   }
-  &-list::before{
-
-      content: ':[';
-      position: absolute;
-      top: .1em;
-      right: 1.2em;
-      font-weight: 100;
-      font-size: 10em;
-      color: $logo-bg;
-      opacity: .5;
-  
-      
-    }
-
- 
-
     
   }
  

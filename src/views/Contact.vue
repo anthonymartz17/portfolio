@@ -1,20 +1,22 @@
 <template>
   <div>
     <div class="contact-container">
-      <h2>Contact</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto asperiores magnam fugit sapiente similique molestias.</p>
-    
+      <h2>{{contactTitle}}</h2>
+      <p>{{contactDescription}}</p>
     <div class="contact-info">
-      <div>
-       <a href="#"><i class="far fa-envelope fa-2x"></i></a>
-        <p>E-mail</p>
+      
+        <a class="contact-info-contacts" href="#"><i class="far fa-envelope fa-2x"></i>
+        <p class="icon-text">E-mail</p>
         <p>antonio.fr.martinezc@hotmail.com</p>
-      </div>
-      <div>
-        <a href="https://github.com/anthonymartz17?tab=repositories" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-        <p>Github</p>
-        <p>User: anthonymartz17</p>
-      </div>
+        </a>
+      
+      
+        <a class="contact-info-contacts" href="https://github.com/anthonymartz17?tab=repositories" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
+        <p class="icon-text">Github</p>
+        <p>anthonymartz17</p>
+        </a>
+      
     </div>
     </div>
   </div>
@@ -22,6 +24,13 @@
 
 <script>
 export default {
+  data(){
+    return{
+      contactTitle:'Contact',
+      contactDescription:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto asperiores magnam fugit sapiente similique molestias.',
+
+    }
+  }
 
 }
 </script>
@@ -29,44 +38,57 @@ export default {
 <style lang='scss'>
 
 .contact-container{
- background: red;
+//  background: red;
   height: 74vh;
   margin: 2em 3em;
   
   
-  // h2{
-
-  // }
+  
+  h2{
+      font: $font-title-lg;
+  }
 
   p{
-    
+    font:$font-text;
+    margin-block: 1em;
   }
   .contact-info{
-      @include tablet{
-       padding: 2em;
-       
-  }
-    width: 100%;
-    height: 40vh;
-    margin-top: 2em;
-  
-
-    div{
-       text-align: center;
-      padding-block: .5em;
-      margin-block: 1em;
-      padding: 1em;
-      border: 1px solid rgba(0, 0, 0, 0.308);
-      transition: all 250ms ease-in-out;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.178);
-      cursor: pointer;
-    }
-
-    div:hover{
-      background: black;
-      color: white;
-    }
+    margin-block: 3em;
+    display: flex;
+    gap: 2em;
     
+
+    &-contacts{
+      color: $dark;
+       height: 35vh;
+       flex: 1;
+       padding-inline: 5em;
+       box-shadow: $bx-shadow;
+       border:1px solid lighten( $dark, 50%);
+      //  border-radius: 5px;
+      //  display: flex;
+       text-align: center;
+      padding-block: 4em;
+      margin-block: 1em;
+      transition: all 250ms ease-in-out;
+      // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.178);
+      
+      box-shadow: inset 0em 9em $logo-bg;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      cursor: pointer;
+
+
+    i,.icon-text{
+      color: $white;
+    }
+
+
+    }
+    &-contacts:hover{
+      
+     
+    }
   }
 }
 

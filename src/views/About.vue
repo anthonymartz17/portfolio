@@ -37,7 +37,7 @@ export default {
     return{
       // about component content
       aboutHeading:'About Me',
-      aboutPersonalDescription:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates dolorum officiis autem quos sunt enim eligendi vitae illo, veniam nisi perspiciatis alias, expedita impedit voluptas accusantium? Minima, aliquid natus iste fugiat culpa illo quod assumenda neque libero, nulla, labore soluta asperiores ipsam doloremque! Cupiditate, fugit est? Porro dignissimos eaque molestias!',
+      aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat. My eyes were still opened but my body projected a disturbing stillness. I wasn’t moving. I was just there. Experiencing the highest of highs without having ever even tried any type of narcotic drugs. Extasiado, mesmerized. I was so happy. I had for the first time encountered and solved a programming problem. Ever since there, I was hooked on coding.',
       techSkills:["HTML5","CSS3","JavaScript","Vue.js/Vuex","Bootstrap","Sass"],
       otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"]
             

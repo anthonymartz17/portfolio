@@ -74,7 +74,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1em;
-   
+    padding-bottom: 1em;
   }
 
   div{

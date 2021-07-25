@@ -1,104 +1,125 @@
 <template>
   <div>
-    <div class="projects-container">
+    <div class="projects-section">
     <h2>My Work</h2>
 
-  <section>
+  <div class="projects-section-container">
 
-    <div class="each-project project1">
-      <h3>To Do APP</h3>
+    <div :class="[project.class]" v-for="(project,key) in projects" :key="key">
+      <h3>{{project.projectName}}</h3>
       <div class="img-container">
-        <img src="@/assets/images/todoApp.png" alt="">
+        
       </div>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
-      <div class="btn-container">
-        <a href="#">View Site</a>
-        <a href="#">Code</a>
-      </div>
-    </div>
-    <div class="each-project project2">
-      <h3>CRUD Maintance Project</h3>
-      <div class="img-container">
-        <img src="@/assets/images/crudMaintance.png" alt="">
-      </div>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
-      <div class="btn-container">
-        <a href="#">View Site</a>
-        <a href="#">Code</a>
-      </div>
-    </div>
-    <div class="each-project project3">
-      <h3>Github Finder</h3>
-      <div class="img-container">
-        <img src="@/assets/images/github-finder.png" alt="">
-      </div>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
-      <div class="btn-container">
-        <a href="#">View Site</a>
-        <a href="#">Code</a>
-      </div>
-    </div>
-    <div class="each-project project4">
-      <h3>Weather App</h3>
-      <div class="img-container">
-        <img src="@/assets/images/weatherApp.png" alt="">
-      </div>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!</p>
+      <p>{{project.description}}}</p>
       <div class="btn-container">
         <a href="#">View Site</a>
         <a href="#">Code</a>
       </div>
     </div>
    
-  </section>
+  </div>
    </div>
   </div>
 </template>
 
 <script>
+
 export default {
+  data(){
+    return{
+      projects:[
+        {
+          projectName:'To Do App', 
+          img:'@/assets/images/todoApp.png', 
+          description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+          alt:'tasks app',
+          class:"each-project project1"
+          },
+        {
+          projectName:'Weather App', 
+          img:"@/assets/images/weatherApp.png", 
+          description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+          alt:'weather app image',
+          class:"each-project project2"
+          },
+        {
+          projectName:'Landing Page', 
+          img:"@/assets/images/aria-website.png", 
+          description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+          alt:'landing page image',
+          class:"each-project project3"
+          },
+          // {
+          //   projectName:'Github Finder', 
+          //   img:"@/assets/images/github-finder.png", 
+          //   description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+          //   alt:'githup finder image',
+          //   class:"each-project project4"
+          //   },
+      ]
+    }
+  }
 
 }
 </script>
 
 <style lang='scss'>
 
-.projects-container{
- 
- 
-  padding: 1em;
+.projects-section{
+  // background: blue;
+  margin: 2em 3em;
+  height: 74vh;
    
    h2{
-     text-align: center;
-     margin: 1em;
+      font:$font-title-lg;
+       color: $dark;
+       margin-block: 1em;
    }
-  p{
-    text-align: center;
-  }
+ 
+&-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1em;
+  max-width: 100%;
+  height: 100%;
+  overflow: auto;
 
-  section{
-   @include tablet{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 1em;
-     
- }
-  }
+  // background:red;
+}
+
 
 }
 
-.each-project{
-  @include tablet{
-    margin-block: 0;
+$projectImg:(
+   "project1":'../assets/images/todoApp.png',
+   "project2":'../assets/images/weatherApp.png',
+  //  "project3":'../assets/images/github-finder.png',
+   "project3":'../assets/images/aria-website.png'
+);
+
+@each $name,$img in $projectImg{
+  .#{$name}{
+     background-image: url($img);
+     background-size: contain;
+     background-repeat: no-repeat;
+     border: 1px solid ;
+     height: 41vh;
   }
-  margin-block: 1em;
-  padding-block: .5em;
-  border: 1px solid rgba(0, 0, 0, 0.11);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 20em ;
-  gap: .5em;
+}
+
+.each-project{
+ 
+  // background-image: url(../assets/images/saona.jpg);
+ 
+  // margin-block: 1em;
+  // padding-block: .5em;
+  // border: 1px solid rgba(0, 0, 0, 0.11);
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // min-height: 20em ;
+  // gap: .5em;
  
   img{
     max-width: 100%;

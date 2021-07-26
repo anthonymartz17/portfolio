@@ -7,7 +7,7 @@
       </header>
       <aside>
         <div class="logo">
-          <p>Antonio Martinez</p>
+          <p>Martz</p>
           </div>
         <nav>
         <app-navlinks></app-navlinks>
@@ -136,16 +136,16 @@ aside{
   .logo{
     
     display: flex;
-    padding-left: 2.6em;
+    padding-left: 2.5em;
     align-items: center;
     background: $logo-bg;
     font:$font-logo-name;
     color: $light;
+     
 
     p{
-    
-      border-right: 1px solid $white;
-      padding-right: .5em;
+      border-bottom: 1px solid $white;
+      
     }
   }
   nav{

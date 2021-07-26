@@ -6,14 +6,13 @@
   <div class="projects-section-container">
 
     <div :class="[project.class]" v-for="(project,key) in projects" :key="key">
+      <div class="overlay">
       <h3>{{project.projectName}}</h3>
-      <div class="img-container">
-        
-      </div>
       <p>{{project.description}}}</p>
       <div class="btn-container">
-        <a href="#">View Site</a>
-        <a href="#">Code</a>
+        <a href="#">Read more</a>
+        <a href="https://www.w3schools.com/cssref/pr_border-color.asp" target="_blank">View Code</a>
+      </div>
       </div>
     </div>
    
@@ -84,6 +83,7 @@ export default {
   max-width: 100%;
   height: 100%;
   overflow: auto;
+  // padding-top: 4em;
 
   // background:red;
 }
@@ -103,46 +103,79 @@ $projectImg:(
      background-image: url($img);
      background-size: contain;
      background-repeat: no-repeat;
-     border: 1px solid ;
-     height: 41vh;
+     box-shadow: $bx-shadow;
+     height: 38vh;
+     overflow: hidden;
   }
 }
 
 .each-project{
+  position: relative;
  
-  // background-image: url(../assets/images/saona.jpg);
  
-  // margin-block: 1em;
-  // padding-block: .5em;
-  // border: 1px solid rgba(0, 0, 0, 0.11);
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // min-height: 20em ;
-  // gap: .5em;
- 
-  img{
-    max-width: 100%;
+  .overlay{
+  
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+
+    &:hover{
+      opacity: 1;
+
+    }
   }
 
+
+  h3{
+    font: $font-title-lg;
+    color: $white;
+    border: 1px solid;
+    border-color:$logo-bg $logo-bg $white $white ;
+    padding: .5em 1em;
+    z-index: 1;
+  }
+
+  p{
+    z-index: 1;
+    font: $font-text;
+    color: $white;
+    margin-inline: 1em;
+    padding-inline: .5em;
+    
+  }
+
+  
   .btn-container{
+    z-index: 1;
     display: flex;
     gap: 1em;
     justify-content: space-evenly;
     
+    
 
     a{
       // background: $sunset-brown;
+      font: $font-text;
       color: white;
+      background: $logo-bg;
       text-transform: uppercase;
       font-weight: 300;
-      border-radius: 15px;
+      border-radius: 5px;
       padding: .5em 1em;
       cursor: pointer;
       transition: all 250ms ease-in-out;
     }
     a:hover{
-      background: black;
+      background: lighten($logo-bg, 10%);
       
     }
   }

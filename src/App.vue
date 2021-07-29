@@ -2,10 +2,11 @@
 <div>
   <div class="container">
       <header>
-        <h1> Antonio Martinez</h1>
-        <!-- <p>FRONT-END WEB DEVELOPER</p> -->
+        <i @click="showMenu" class="fas fa-bars"></i>
+        <h1 class="my-huge-name"> Antonio Martinez</h1>
+
       </header>
-      <aside>
+      <aside :class="['side-nav',{'show-hide-menu':isActive}]">
         <div class="logo">
           <p>Martz</p>
           </div>
@@ -26,7 +27,6 @@
     <section class="sect1">
       <div class="display-screen">
           <!-- <img src="@/assets/sunset-simba.jpg" alt="home page image"> -->
-          <app-im-animation class="Home-page-text-animation"></app-im-animation>
       </div>
     </section>
 
@@ -60,18 +60,27 @@ export default {
   //   'app-projects': Projects,
   //   'app-contact': Contactpage,
     'app-footer': Footer,
-  }
+  },
+  data(){
+    return{
+      isActive: false,
+    }
+   
+  },
+  methods:{
+         showMenu(){
+           this.isActive =! this.isActive
+           console.log(this.isActive)
+         }
+    }
+
 }
 </script>
 
 <style lang="scss">
-// .hamburguer{
-//   span{
-//     background: black;
-//     width: 10px;
-//   }
-// }
+
 .container{
+  position: relative;
   background: $light;
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -82,63 +91,89 @@ export default {
   "aside footer footer footer"
   ;
   height: calc(100vh - 4px);
-
   
+  @include mobile{
+    grid-template-columns: 0fr 6fr;
+  }
+  
+  .fa-bars{
+     display: none;
+   }
 
   header{
-    position: relative;
-    background:$white;
-   grid-area: header;
-    gap: 1em;
-   box-shadow: $bx-shadow;
-  
-  
 
+   @include mobile{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+   
+   .fa-bars{
+     display: block;
+     position: absolute;
+     left: 1em;
+     top: 1.3em;
+     font-size: 1.2em;
+     color: $primary;
+     cursor: pointer;
+   }
+
+
+
+   }
+
+   
+ 
+ display: flex;
+     grid-area: header;
+ justify-content: center;
+    background:$white;
+   box-shadow: $bx-shadow;
+   overflow: hidden;
   
-  // img{
-  //   max-width: 70px;
-  //   height: 70px;
-  //   border-radius: 50%;
-  // }
- 
-// i{
- 
-//   top: 20px;
-//   right: 20px;
-//   color: $sunset-brown;
-// }
- 
-  h1{
+  .my-huge-name{
+    display: inline-block;
+    font:$font-jumboName-desktop;
+     opacity: .08;
+
+    @include mobile{
     
-    font: $font-logo;
-    text-align: center;
-    position: absolute;
-    left: 3em;
-    top: -.15em;
-    opacity: .08;
-    // background:red;
+      font:$font-jumboName-mobile;
+      
+      
+    }
+   
+    
     
   }
-  // p{
-  //   font: $font-title-md;
-  //   text-align: center;
-  //   border-block: 1px solid $sunset-brown;
-  //   padding-block: .5em;
-  // }
+  
 }
 
-aside{
+.side-nav{
   
   grid-area: aside;
   display: grid;
   grid-template-rows: 1fr 7fr;
 
+  @include mobile{
+      
+      position: absolute;
+      z-index: 10;
+      height: 100%;
+      transform: translatex(-170px);
+
+  }
+
   .logo{
     
+    @include mobile{
+      padding-left: 1.6em;
+    }
     display: flex;
     padding-left: 2.5em;
     align-items: center;
-    background: $logo-bg;
+    background: $primary;
     font:$font-logo-name;
     color: $light;
      

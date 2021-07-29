@@ -5,13 +5,14 @@
       <a :href="contact.media" target="_blank"><i :class=[contact.icon]></i></a>
      </li>
    </ul>
-     <small>© {{new Date().getFullYear()}} Antonio Martinez</small>
+     <small>© {{currentYear}} Antonio Martinez</small>
   </div>
 </template>
 <script>
 export default {
   data(){
     return{
+      currentYear:new Date().getFullYear(),
       contacts:[
         {media:"https://github.com/anthonymartz17?tab=repositories", icon:"fab fa-github"},
         {media:"https://www.instagram.com/anthonymartz17/", icon:"fab fa-instagram"},
@@ -60,7 +61,7 @@ export default {
     border-bottom: 1px solid transparent;
       
      &:hover{
-       color: $logo-bg;
+       color: $primary;
       
     }
 

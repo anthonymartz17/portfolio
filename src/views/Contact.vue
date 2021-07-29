@@ -89,7 +89,7 @@ export default {
 
 
     &:focus{
-      outline:1px solid lighten($logo-bg,10%); 
+      outline:1px solid $light-primary; 
     }
   }
 
@@ -100,7 +100,7 @@ export default {
     max-width: 100%;
     min-width: 50%;
     &:focus{
-      outline:1px solid lighten($logo-bg,10%); 
+      outline:1px solid $light-primary; 
     }
   }
   
@@ -108,7 +108,7 @@ export default {
     flex: 1;
     align-self: flex-start;
     padding: 0em 4em;
-    background: $logo-bg;
+    background: $primary;
     border: transparent;
     border-radius: 5px;
     color: $white;
@@ -117,7 +117,7 @@ export default {
     transition: all 250ms ease-in-out;
 
     &:hover{
-      background: lighten($logo-bg,10%);
+      background: $light-primary;
     }
   }
   

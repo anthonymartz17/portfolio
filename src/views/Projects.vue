@@ -139,7 +139,7 @@ $projectImg:(
     font: $font-title-lg;
     color: $white;
     border: 1px solid;
-    border-color:$logo-bg $logo-bg $white $white ;
+    border-color:$primary $primary $white $white ;
     padding: .5em 1em;
     z-index: 1;
   }
@@ -166,7 +166,7 @@ $projectImg:(
       // background: $sunset-brown;
       font: $font-text;
       color: white;
-      background: $logo-bg;
+      background: $primary;
       text-transform: uppercase;
       font-weight: 300;
       border-radius: 5px;
@@ -175,7 +175,7 @@ $projectImg:(
       transition: all 250ms ease-in-out;
     }
     a:hover{
-      background: lighten($logo-bg, 10%);
+      background: $light-primary;
       
     }
   }

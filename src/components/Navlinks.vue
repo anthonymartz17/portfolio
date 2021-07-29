@@ -46,7 +46,7 @@ export default {
 <style lang='scss'>
 
 a.router-link-exact-active{
-  color: $logo-bg;
+  color: $primary;
 }
  .tabs{
        display: flex;

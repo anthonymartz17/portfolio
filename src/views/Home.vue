@@ -9,7 +9,6 @@
         <div class="greeting-card-text">
           <p >Hello!</p>
           <p>I'm Antonio, a front-end dev in NY.</p>
-         <!-- <app-home-text-animation></app-home-text-animation> -->
         </div>
       </div>
     </div>
@@ -18,11 +17,8 @@
 </template>
 
 <script>
-// import Hometextanimation from '../components/Home-text-animation.vue'
 export default {
-  // components:{
-  //       'app-home-text-animation': Hometextanimation
-  // },
+  
 
   data(){
     return{
@@ -49,7 +45,7 @@ export default {
   display: flex;
   gap: 1em;
   margin-top: 1em;
-  background: $logo-bg;
+  background: $primary;
   height: 60vh;
   width: 100%;
   box-shadow: $bx-shadow;

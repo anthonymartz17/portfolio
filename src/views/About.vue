@@ -85,7 +85,7 @@ h2{
       gap: .5em;
       font: $font-title-lg;
       flex: 1;
-      background:$logo-bg;
+      background:$primary;
       color: $white;
     }
 

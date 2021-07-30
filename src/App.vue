@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="container">
-      <div class="modal" v-show="isActive" @click="showMenu"></div>
+      <transition name="modal">
+        <div class="modal" v-show="isActive" @click="showMenu"></div>
+      </transition>
       <header>
         <i @click="showMenu" class="fas fa-bars"></i>
         <h1 class="my-huge-name"> Antonio Martinez</h1>
       </header>
-      <transition>
-        <aside class="side-nav">
+      <transition name="slide-in-out">
+        <aside class="side-nav" v-show="isActive">
           <div class="logo">
             <p>Martz</p>
           </div>
@@ -55,6 +57,42 @@
 </script>
 
 <style lang="scss">
+// .slide-in-out-enter, .slide-in-out-leave-to{
+//   transform: translatex(-170px);
+//   transition: all 300ms ease-in-out;
+//   opacity: 0;
+// }
+.slide-in-out-enter-active{
+
+  animation: slide .4s ease-in-out ;
+  
+}
+ .slide-in-out-leave-active{
+   animation: slide .4s ease-in-out reverse;
+ }
+
+
+@keyframes slide{
+
+  0%{
+    transform: translateX(-170px);
+  }
+
+  100%{
+    transform: translateX(0px);
+  }
+
+} 
+
+.modal-enter, .modal-leave-to{
+  opacity: 0;
+}
+
+.modal-enter-active, .modal-leave-active{
+  transition: opacity .3s;
+ 
+}
+
 .modal{
   position: absolute;
   width: 100%;
@@ -144,7 +182,7 @@
       position: absolute;
       z-index: 10;
       height: 100%;
-      transform: translatex(-170px);
+      // transform: translatex(-170px);
 
   }
 

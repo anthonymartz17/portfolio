@@ -42,7 +42,7 @@
     data(){
       return{
         isActive: false,
-        hide: false,
+       
       }
     
     },
@@ -135,11 +135,13 @@
    .fa-bars{
      display: block;
      position: absolute;
-     left: 1em;
-     top: 1.3em;
+     top: 50%;
+     left: 10%;
+     transform: translateY(-50%);
      font-size: 1.2em;
      color: $primary;
      cursor: pointer;
+
    }
 
    }

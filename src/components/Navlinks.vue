@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
-      <li>
+      <li @click="showMenu">
        <router-link :to="{name:link.name}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  props:['showMenu'],
   data(){
     return{
       

@@ -1,85 +1,70 @@
 <template>
-<div>
-  <div class="container">
+  <div>
+    <div class="container">
+      <div class="modal" v-show="isActive" @click="showMenu"></div>
       <header>
         <i @click="showMenu" class="fas fa-bars"></i>
         <h1 class="my-huge-name"> Antonio Martinez</h1>
-
       </header>
-      <aside :class="['side-nav',{'show-hide-menu':isActive}]">
-        <div class="logo">
-          <p>Martz</p>
+      <transition>
+        <aside class="side-nav">
+          <div class="logo">
+            <p>Martz</p>
           </div>
-        <nav>
-        <app-navlinks></app-navlinks>
-        </nav>
-      </aside>
+          <nav>
+            <app-navlinks :showMenu="showMenu"></app-navlinks>
+          </nav>
+        </aside>
+      </transition>
       <main>
         <routerView/>
       </main>
       <footer>
-          <app-footer></app-footer>
+        <app-footer></app-footer>
       </footer>
-
-
-
-
-    <section class="sect1">
-      <div class="display-screen">
-          <!-- <img src="@/assets/sunset-simba.jpg" alt="home page image"> -->
-      </div>
-    </section>
-
-   
-  
-   
-  </div>
-    <!-- <app-about></app-about>
-    <app-projects></app-projects>
-    <app-contact></app-contact>-->
-     
-    
-   
     </div>
-
-    
+  </div> 
 </template>
+
+
 <script>
 
-import Navlinks from './components/Navlinks.vue';
-// import IamAnimation from './components/IamAnimation.vue';
-// import Projects from './components/Projects.vue';
-// import Contactpage from './components/Contactpage.vue';
-import Footer from './components/Footer.vue';
+  import Navlinks from './components/Navlinks.vue';
+  import Footer from './components/Footer.vue';
 
-export default {
-  components:{
-    'app-navlinks': Navlinks,
-  //   'app-im-animation': IamAnimation,
-  //   'app-about': About,
-  //   'app-projects': Projects,
-  //   'app-contact': Contactpage,
-    'app-footer': Footer,
-  },
-  data(){
-    return{
-      isActive: false,
-    }
-   
-  },
-  methods:{
-         showMenu(){
-           this.isActive =! this.isActive
-           console.log(this.isActive)
-         }
-    }
+  export default {
+    components:{
+      'app-navlinks': Navlinks,
+      'app-footer': Footer,
+    },
+    data(){
+      return{
+        isActive: false,
+        hide: false,
+      }
+    
+    },
+    methods:{
+          showMenu(){
+            this.isActive =! this.isActive
+          },
+          
+      }
 
 }
 </script>
 
 <style lang="scss">
-
+.modal{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.212);
+  z-index: 1;
+}
 .container{
+  overflow: hidden;
+  min-width: 320px;
   position: relative;
   background: $light;
   display: grid;
@@ -119,8 +104,6 @@ export default {
      cursor: pointer;
    }
 
-
-
    }
 
    
@@ -150,7 +133,7 @@ export default {
   
 }
 
-.side-nav{
+  .side-nav{
   
   grid-area: aside;
   display: grid;
@@ -188,16 +171,16 @@ export default {
   }
 }
 
-main{
+  main{
   grid-area: main;
   overflow: hidden;  
   
-}
-footer{
+  }
+  footer{
   grid-area: footer;
   // background: $light-dark;
 
-}
+  }
 
 }
 .sect1{
@@ -221,12 +204,6 @@ footer{
     left: 60px;
   }
 }
-
-
-
- 
-
-
 
 .nav-component{
   display: none;

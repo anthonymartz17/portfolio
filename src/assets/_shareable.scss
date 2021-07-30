@@ -86,8 +86,35 @@ ul{
 }
 
 
-.aside{
-  @include mobile{
-     transform: translatex(0px);
-  }
-}
+// .show-menu{
+//   animation: showMenu 300ms ease-in-out forwards;
+// }
+
+// @keyframes showMenu{
+
+//   0%{
+//     transform: translateX(-170px);
+//   }
+
+//   100%{
+//     transform: translateX(0px);
+//   }
+
+// } 
+
+
+// .hide-menu{
+//   animation: hideMenu 300ms ease-in-out forwards;
+// }
+
+// @keyframes hideMenu{
+
+//   0%{
+//     transform: translateX(0px);
+//   }
+  
+//   100%{
+//     transform: translateX(-170px);
+//   }
+
+// } 

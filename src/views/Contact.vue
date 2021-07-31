@@ -65,6 +65,10 @@ export default {
 //  background: red;
   height: 74vh;
   margin: 2em 3em;
+
+  @include mobile{
+     height: 65vh;
+  }
   
   
 

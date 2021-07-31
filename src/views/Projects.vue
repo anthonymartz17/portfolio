@@ -68,6 +68,13 @@ export default {
   // background: blue;
   margin: 2em 3em;
   height: 74vh;
+
+  @include mobile{
+       
+       height: 62vh;
+       padding-block: 2em;
+      }
+
    
    h2{
       font:$font-title-lg;
@@ -76,16 +83,20 @@ export default {
    }
  
 &-container{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-template-rows: auto;
+  display: flex;
+  justify-content: space-evenly;
   gap: 1em;
-  max-width: 100%;
+  // max-width: 100%;
   height: 100%;
-  overflow: auto;
-  // padding-top: 4em;
-
-  // background:red;
+  overflow-y: auto;
+  
+  @include mobile{
+       display: block;
+       padding-block: 1em;
+      }
 }
 
 
@@ -111,8 +122,11 @@ $projectImg:(
 
 .each-project{
   position: relative;
- 
- 
+  flex:1;
+ @include mobile{
+        margin-bottom: 1em;
+      }
+
   .overlay{
   
     position: absolute;

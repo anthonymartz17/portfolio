@@ -4,33 +4,26 @@
 
 // colors:
 
-$dark:#534E52;
-$light:#F5F4F4;
-$white:white;
-$primary:#39A2DB;
-$light-primary:lighten($primary,10%);
+      $dark:#534E52;
+      $light:#F5F4F4;
+      $white:white;
+      $primary:#39A2DB;
+      $light-primary:lighten($primary,10%);
 
-// box-shadows-----------------------------------
-$bx-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+// box-shadows
+      $bx-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
  
-// $bx-shadow-blue-corner:
-// -------------------------------------------------
-   // fonts
-$font-stack: 'Poppins', sans-serif;
 
-$font-logo-name: normal 500 1.5em $font-stack;
-
-$font-jumboName-desktop: normal 900 5em $font-stack;
-$font-jumboName-tablet: normal 900 5em $font-stack;
-$font-jumboName-mobile: normal 600 1.3em $font-stack;
-
-// 24px
-$font-title-lg: normal 500 1.5em $font-stack;
-// 16px
-$font-title-md: normal 400 1em $font-stack;
-// 16px
-$font-text: normal 400 1em $font-stack;
-// --------------------------------------------------
+// fonts desktop
+      $font-stack: 'Poppins', sans-serif;
+      $font-logo-name: normal 500 1.5em $font-stack;
+      $font-jumboName-desktop: normal 900 5em $font-stack;
+      $font-jumboName-tablet: normal 900 5em $font-stack;
+      $font-jumboName-mobile: normal 600 1.3em $font-stack;
+      $font-title-lg: normal 500 1.5em $font-stack;
+      $font-title-md: normal 400 1em $font-stack;
+      $font-text: normal 400 1em $font-stack;
+    
 
 
 

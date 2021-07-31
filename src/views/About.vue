@@ -54,6 +54,10 @@ export default {
   margin: 2em 3em;
   height: 74vh;
  
+ @include mobile{
+  //  height: 65vh;
+  overflow-y: auto;
+ }
    
 h2{
 
@@ -74,7 +78,13 @@ h2{
     justify-content: space-evenly;
     gap: 5em;
     margin-block: 3em;
+    
 
+   
+   @include mobile{
+     flex-direction: column;
+     gap: 3em;
+   }
     
     &-title{
       // text-align: center;
@@ -87,18 +97,23 @@ h2{
       flex: 1;
       background:$primary;
       color: $white;
+
+      @include mobile{
+        padding-block: 1em;
+      }
     }
 
      &-list {
        
+       
        padding: 3em;
        border-right: 1px solid lighten($dark, 40%);
-      //  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-     
-       
+       text-align: start;
+       flex: 1; 
+       @include mobile{
 
-      text-align: start;
-      flex: 1;
+        padding: 1em 5em;
+      }
     }
    
      &-techskills, &-otherskills{
@@ -109,10 +124,13 @@ h2{
        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
        color: $dark;
        position: relative;
-    
-    
-    font:$font-text;
+       font:$font-text;
 
+
+      @include mobile{
+
+        flex-direction: column;
+   }
    
    
     li{

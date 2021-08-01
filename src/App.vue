@@ -2,7 +2,7 @@
   <div>
     <div class="container">
         <transition name="fade">
-        <div :class="{modal:mobileNav}" @click="toggleMobileNav"></div>
+        <div class="modal" v-show="mobileNav" @click="toggleMobileNav"></div>
         </transition>
       <header>
         <i @click="toggleMobileNav" class="fas fa-bars " v-show="mobile"></i>
@@ -60,6 +60,7 @@
     },
     created(){
     
+     window.addEventListener('resize',this.handledesktopMenu)
       this.handledesktopMenu()
     },
  
@@ -70,8 +71,12 @@
             if(window.innerWidth <= 414){
 
              this.mobile = true
+        
              
-           } 
+           } else{
+             this.mobile = false
+             this.mobileNav = false
+           }
 
          },
          toggleMobileNav(){
@@ -102,13 +107,14 @@
   transform: translateX(0px);
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s ease-in-out;
-}
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
 
+.fade-enter-active, .fade-leave-active{
+  transition: opacity .4s ease-in-out;
+  
+}
 
 .modal{
   z-index: 1;

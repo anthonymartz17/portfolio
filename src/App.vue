@@ -53,7 +53,8 @@
       return{
         
         mobile:false,
-        mobileNav:false
+        mobileNav:false,
+        jumboName:false
        
       }
     

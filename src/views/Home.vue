@@ -4,11 +4,13 @@
       <h2>Home</h2>
       <div class="greeting-card">
         <div class="greeting-card-img">
-          <div class="overlay"></div>
+         </div>
+         <div class="greeting-card-hi">
+           <p >Hi, I am</p>
+           <h2>Antonio</h2>
          </div>
         <div class="greeting-card-text">
-          <p >Hello!</p>
-          <p>I'm Antonio, a front-end dev in NY.</p>
+          <p>Front-end dev</p>
         </div>
       </div>
     </div>
@@ -19,10 +21,18 @@
 <script>
 export default {
   
-
+ destroyed(){
+      this.jumboName = true
+      
+ },
+ created(){
+      this.jumboName = false
+      
+ },
   data(){
     return{
-      img:'@/assets/images/saona.jpg'
+      img:'@/assets/images/saona.jpg',
+      jumboName:false
     }
   }
 
@@ -45,48 +55,73 @@ export default {
   display: flex;
   gap: 1em;
   margin-top: 1em;
-  background: $primary;
+  // background: $primary;
   height: 60vh;
   width: 100%;
-  box-shadow: $bx-shadow;
-  border-radius: 5px;
+  // box-shadow: $bx-shadow;
+  // border-radius: 5px;
    position: relative;
+&-hi{
+  text-align: center;
+  top: 30px;
+  right: 0;
+  position: absolute;
+  background: $white;
+  width: 60%;
+  height: 40%;
+  clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
+  box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+p{
+   font:$font-greeting-hi;
+   color: $light-dark;
+   text-align: start;
+   padding-left: 2em;
+  //  background:red;
+}
+h2{
+  font:$font-greeting-name
+}
+ 
+}
 &-img{
-  // background: $dark;
+  box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 1;
+  margin-left: 3em;
   background-image: url(../assets/images/saona.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: 60%;
-  width: 55%;
+  background-position-x: 40%;
+  width: 45%;
   position: relative;
 
   
-  .overlay{
-    position: absolute;
-    // background: rgba(0, 0, 0, 0.26);
-    
-    width: 100%;
-    height: 100%;
-  }
+ 
   
 }
 &-text{
   display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: flex-start;
-  padding-left: 7em;
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2em;
+  margin-bottom: 2em;
   position: absolute;
-  right: 0px;
-  width: 65%;
-  height: 100%;
-  flex: 1;
-  background: $white;
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  width: 100%;
+  height: 30%;
+  background: $primary;
   font:$font-title-lg;
   color: $dark;
+  // clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
 
+ 
+ p{
+   color: $white;
+   font: $font-logo-name;
+   border-bottom: .5px solid $white;
+
+  
+ }
 
 }
 }

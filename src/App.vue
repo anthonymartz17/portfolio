@@ -1,23 +1,33 @@
 <template>
   <div>
     <div class="container">
-      <transition name="modal">
-        <div class="modal" v-show="isActive" @click="showMenu"></div>
-      </transition>
+        <transition name="fade">
+        <div :class="{modal:mobileNav}" @click="toggleMobileNav"></div>
+        </transition>
       <header>
-        <i @click="showMenu" class="fas fa-bars"></i>
+        <i @click="toggleMobileNav" class="fas fa-bars " v-show="mobile"></i>
         <h1 class="my-huge-name"> Antonio Martinez</h1>
       </header>
-      <transition name="slide-in-out">
-        <aside class="side-nav" v-show="isActive">
+       
+       <aside class="side-nav" v-show="!mobile">
           <div class="logo">
             <p>Martz</p>
           </div>
           <nav>
-            <app-navlinks :showMenu="showMenu"></app-navlinks>
+            <app-navlinks></app-navlinks>
           </nav>
         </aside>
-      </transition>
+        
+        <transition name="slide">
+        <aside class="side-nav" v-show="mobileNav">
+          <div class="logo">
+            <p>Martz</p>
+          </div>
+          <nav>
+            <app-navlinks :toggleMobileNav="toggleMobileNav"></app-navlinks>
+          </nav>
+        </aside>
+        </transition>
       <main>
         <routerView/>
       </main>
@@ -41,15 +51,36 @@
     },
     data(){
       return{
-        isActive: false,
+        
+        mobile:false,
+        mobileNav:false
        
       }
     
     },
+    created(){
+    
+      this.handledesktopMenu()
+    },
+ 
     methods:{
-          showMenu(){
-            this.isActive =! this.isActive
+         
+
+         handledesktopMenu(){
+            if(window.innerWidth <= 414){
+
+             this.mobile = true
+             
+           } 
+
+         },
+         toggleMobileNav(){
+           if(window.innerWidth <= 414){
+
+             this.mobileNav = !this.mobileNav
+           }
           },
+         
           
       }
 
@@ -57,49 +88,38 @@
 </script>
 
 <style lang="scss">
-// .slide-in-out-enter, .slide-in-out-leave-to{
-//   transform: translatex(-170px);
-//   transition: all 300ms ease-in-out;
-//   opacity: 0;
-// }
-.slide-in-out-enter-active{
 
-  animation: slide .4s ease-in-out ;
-  
+.slide-enter,.slide-leave-to{
+   
+   transform: translateX(-250px);
+ 
 }
- .slide-in-out-leave-active{
-   animation: slide .4s ease-in-out reverse;
- }
+.slide-enter-active,.slide-leave-active{
+  transition: all .4s ease-in-out ;
 
+}
+.slide-enter-to, .slide-leave{
+  transform: translateX(0px);
+}
 
-@keyframes slide{
-
-  0%{
-    transform: translateX(-170px);
-  }
-
-  100%{
-    transform: translateX(0px);
-  }
-
-} 
-
-.modal-enter, .modal-leave-to{
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 
-.modal-enter-active, .modal-leave-active{
-  transition: opacity .3s;
- 
-}
 
 .modal{
+  z-index: 1;
   position: absolute;
+  background: rgba(0, 0, 0, 0.534);
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.212);
-  z-index: 1;
+  
 }
+
+
 .container{
   overflow: hidden;
   min-width: 320px;
@@ -119,10 +139,7 @@
     grid-template-columns: 0fr 6fr;
   }
   
-  .fa-bars{
-     display: none;
-   }
-
+  
   header{
 
    @include mobile{
@@ -133,7 +150,7 @@
 
    
    .fa-bars{
-     display: block;
+     
      position: absolute;
      top: 50%;
      left: 10%;

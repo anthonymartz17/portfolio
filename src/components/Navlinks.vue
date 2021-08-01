@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
-      <li @click="showMenu">
+      <li @click="toggleMobileNav">
        <router-link :to="{name:link.name}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props:['showMenu'],
+  props:['toggleMobileNav'],
   data(){
     return{
       
@@ -27,18 +27,7 @@ export default {
     }
   },
   methods:{
-    // addActive(link,e){
     
-    //     this.links.forEach(one =>{
-    //       one.isActive = false 
-    //     })
-    //     if(e.target.parentElement.id == link.id){
-    //       link.isActive = true
-  
-      
-    //   }
-    //         // console.log('no se lo otro, pero yo toy funcionando')  
-    // }
   }
 
 }

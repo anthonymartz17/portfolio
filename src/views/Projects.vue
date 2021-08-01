@@ -72,7 +72,7 @@ export default {
   @include mobile{
        
        height: 62vh;
-       padding-block: 2em;
+      
       }
 
    

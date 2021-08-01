@@ -5,7 +5,7 @@
       <p>{{aboutPersonalDescription}}</p>
       
       <div class="about-skills">
-        <div class="about-skills-techskills">
+        <div class="about-skills-techskills" :class="{pageAnimation: pageAni}">
           <div class="about-skills-title">
             <i class="fas fa-laptop-code fa-2x"></i>
             <h5>Technical Skills</h5>
@@ -15,7 +15,7 @@
           </ul>
         </div>
       
-        <div class="about-skills-otherskills">
+        <div class="about-skills-otherskills pageAnimation">
           <div class="about-skills-title">
             <i class="fas fa-hands-helping fa-2x"></i>
             <h5>Other Skills</h5>
@@ -33,9 +33,20 @@
 <script>
 
 export default {
+  mounted(){
+      this.handlePageAni()
+     
+  },
+
+  methods:{
+    handlePageAni(){
+        this.pageAni = !this.pageAni
+    }
+  },
   data(){
     return{
       // about component content
+      pageAni:false,
       aboutHeading:'About Me',
       aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat.',
       techSkills:["HTML5","CSS3","JavaScript","Vue.js/Vuex","Bootstrap","Sass"],
@@ -49,6 +60,21 @@ export default {
 
 <style lang='scss'>
 
+.pageAnimation{
+  animation: page .8s ease-in-out ;
+ 
+}
+
+@keyframes page{
+  0% {
+      transform: translateY(10px);
+      opacity: 0;
+  };
+  100%{
+     transform: translateY(0px);
+      opacity: 1;
+  }
+}
 
 .about-container{
   margin: 2em 3em;

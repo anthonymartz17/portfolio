@@ -38,7 +38,6 @@ export default {
 
 }
 </script>
-
 <style lang='scss'>
 .home-container{
   // background: red;
@@ -55,32 +54,37 @@ export default {
   display: flex;
   gap: 1em;
   margin-top: 1em;
-  // background: $primary;
   height: 60vh;
   width: 100%;
-  // box-shadow: $bx-shadow;
-  // border-radius: 5px;
    position: relative;
-&-hi{
-  text-align: center;
-  top: 30px;
-  right: 0;
-  position: absolute;
-  background: $white;
-  width: 60%;
-  height: 40%;
-  clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
-  box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+&-hi{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  text-align: start;
+  padding-left: 4em;
+  right: -50px;
+  position: absolute;
+  background: $primary;
+  width: 50%;
+  height: 35%;
+  // clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+ 
 p{
    font:$font-greeting-hi;
-   color: $light-dark;
-   text-align: start;
-   padding-left: 2em;
-  //  background:red;
+   color: $white;
+   
 }
 h2{
-  font:$font-greeting-name
+  font:$font-greeting-name;
+  color: $white;
+ border-top: .5px solid rgba(255, 255, 255, 0.384);
+//  background: $dark;
+
 }
  
 }
@@ -100,6 +104,7 @@ h2{
   
 }
 &-text{
+ 
   display: flex;
   align-self: flex-end;
   justify-content: flex-end;
@@ -109,7 +114,7 @@ h2{
   position: absolute;
   width: 100%;
   height: 30%;
-  background: $primary;
+  background: $dark;
   font:$font-title-lg;
   color: $dark;
   // clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
@@ -126,3 +131,5 @@ h2{
 }
 }
 </style>
+
+

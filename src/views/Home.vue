@@ -20,19 +20,33 @@
 
 <script>
 export default {
+
+  props:['name'],
+  methods:{
+
+    // toggleHugeName(){
+    //   if (this.bigName === true){
+        
+    //   }else{
+      
+    //   }
+    // }
+
+  },
   
  destroyed(){
-      this.jumboName = true
-      
+
+      this.$emit('toggleTrue',this.bigName = true)
  },
  created(){
-      this.jumboName = false
-      
+    
+       this.$emit('toggleFalse',this.bigName = false)
  },
   data(){
     return{
       img:'@/assets/images/saona.jpg',
-      jumboName:false
+      bigName:null
+      
     }
   }
 

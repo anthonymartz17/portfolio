@@ -6,7 +6,9 @@
         </transition>
       <header>
         <i @click="toggleMobileNav" class="fas fa-bars " v-show="mobile"></i>
-        <h1 class="my-huge-name"> Antonio Martinez</h1>
+        <transition name="toggleIt">
+        <h1 class="my-huge-name" v-show="toggle"> Antonio Martinez</h1>
+        </transition>
       </header>
        
        <aside class="side-nav" v-show="!mobile">
@@ -14,7 +16,7 @@
             <p>Martz</p>
           </div>
           <nav>
-            <app-navlinks></app-navlinks>
+            <app-navlinks/>
           </nav>
         </aside>
         
@@ -24,15 +26,15 @@
             <p>Martz</p>
           </div>
           <nav>
-            <app-navlinks :toggleMobileNav="toggleMobileNav"></app-navlinks>
+          <app-navlinks :toggleMobileNav="toggleMobileNav"/>
           </nav>
         </aside>
         </transition>
       <main>
-        <routerView/>
+        <routerView @toggleTrue= toggleBigName($event)  @toggleFalse= toggleBigName($event) />
       </main>
       <footer>
-        <app-footer></app-footer>
+        <app-footer/>
       </footer>
     </div>
   </div> 
@@ -54,7 +56,7 @@
         
         mobile:false,
         mobileNav:false,
-        jumboName:false
+        toggle:null
        
       }
     
@@ -67,6 +69,10 @@
  
     methods:{
          
+         toggleBigName(e){
+         this.toggle = e
+
+         },
 
          handledesktopMenu(){
             if(window.innerWidth <= 414){
@@ -94,6 +100,21 @@
 </script>
 
 <style lang="scss">
+
+.toggleIt-enter,.toggleIt-leave-to{
+  transform: translateY(80px);
+}
+
+.toggleIt-enter-active, .toggleIt-leave-active{
+  transition: all .3s ease-in-out;
+}
+.toggleIt-enter-to, .toggleIt-leave{
+  transform: translateY(0px);
+}
+
+
+
+
 
 .slide-enter,.slide-leave-to{
    

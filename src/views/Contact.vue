@@ -3,23 +3,25 @@
     <div class="contact-container">
       <h2>{{contactTitle}}</h2>
       <p>{{contactDescription}}</p>
+      
 
     <div class="contact-info">
 
       <form action="">
         <div>
           <label for="name"></label>
-          <input class="field" type="text" id="name" placeholder="Full Name*" required>
+          <input v-model="msg" class="field" type="text" id="name" placeholder="Full Name*" required>
         </div>
         <div>
           <label for="email"></label>
           <input class="field" type="email" id="email" placeholder="Email*" required>
         </div>
         
-        <textarea name="textarea" id="" cols="30" rows="10" placeholder="Message*" required></textarea>
+        <textarea  name="textarea" id="" cols="30" rows="10" placeholder="Message*" required></textarea>
         
         <button type="submit">Send</button>
       </form>
+     
 
 
 
@@ -52,6 +54,9 @@ export default {
     return{
       contactTitle:'Contact',
       contactDescription:"Let's work together with dedication and commitment! ",
+      msg:'',
+      checked:false,
+      checkedNames:[]
 
     }
   }

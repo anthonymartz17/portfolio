@@ -8,19 +8,19 @@
         </transition>
        <transition name="slideLeft" appear>
         <div class="greeting-card-hi">
-          <div>
+          <div class="greeting-card-hi-greeting-container">
             <transition name="unhideUp" appear>
            <p >Hi, I am</p>
            </transition>
           </div>
-        <div>
+        <div class="greeting-card-hi-name-container">
           <transition name="unhideDown" appear>
            <h2>Antonio</h2>
            </transition>
         </div>
         </div>
         </transition>
-        <transition name="growX" appear>
+        <transition name="slideRight" appear>
           <div class="greeting-card-text">
             <div>
             <transition name="unhideUpLast" appear>
@@ -65,29 +65,28 @@ export default {
 
 // transitions
 
-.slideUp-enter{
-  transform: translateY(150px)
-}
-.slideUp-enter-to{
-  transform: translateX(0)
-}
-.slideUp-enter-active{
-  transition: all .6s  ease;
-}
+// .slideUp-enter{
+//   transform: translateY(150px)
+// }
+// .slideUp-enter-to{
+//   transform: translateX(0)
+// }
+// .slideUp-enter-active{
+//   transition: all .6s  ease;
+// }
 
-.growX-enter{
-  transform: scaleX(0.8);
- 
+.slideRight-enter{
+  transform: translateX(-50px);
 }
-.growX-enter-to{
-  transform: scaleX(1);
+.slideRight-enter-to{
+  transform: translateX(0);
 }
-.growX-enter-active{
+.slideRight-enter-active{
   transition: all .6s ease;
 }
 
 .slideLeft-enter{
-  transform: translateX(150px);
+  transform: translateX(50px);
 }
 .slideLeft-enter-to{
   transform: translateX(0);
@@ -130,9 +129,6 @@ export default {
 
 
 
-
-
-
 .home-container{
   // background: red;
   margin: 2em 3em;
@@ -150,7 +146,12 @@ export default {
   margin-top: 1em;
   height: 60vh;
   width: 100%;
-   position: relative;
+  position: relative;
+   @include mobile{
+   flex-direction: column;
+  
+  }
+ 
 
 &-hi{
   overflow: hidden;
@@ -165,17 +166,37 @@ export default {
   background: $primary;
   width: 50%;
   height: 35%;
-  // clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
- 
- div{
- 
+  
+    @include mobile{
+   width: 100%;
+   height: 20%;
+   position: static;
+   padding: 0;
+   align-items: center;
+  
+  }
+
+ &-name-container{
    overflow: hidden;
    border-top: .5px solid rgba(255, 255, 255, 0.384);
  }
+
+ &-greeting-container{
+  
+   overflow: hidden;
+   
+ }
+
+
+
 p{
    font:$font-greeting-hi;
    color: $white;
+    @include mobile{
+   font-size: 1.3em;
+  
+  }
  
    
 }
@@ -183,7 +204,10 @@ h2{
   font:$font-greeting-name;
   color: $white;
  
-//  background: $dark;
+   @include mobile{
+font-size: 1.7em;
+  
+  }
 
 }
  
@@ -198,6 +222,14 @@ h2{
   background-position-x: 40%;
   width: 45%;
   position: relative;
+  
+  @include mobile{
+  // border-radius: 50px;
+  width:100% ;
+  height: 35%;
+  margin: 0;
+  
+  }
 
   
  
@@ -217,8 +249,16 @@ h2{
   background: $dark;
   font:$font-title-lg;
   color: $dark;
-  // clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
- 
+  
+   @include mobile{
+  justify-content: center;
+  justify-self: center;
+   font-size: 1em;
+   width: 100%;
+   height: 20%;
+   padding: 0;
+   position: static;
+  }
 
  div{
    overflow: hidden;

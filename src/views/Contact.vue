@@ -72,15 +72,15 @@ export default {
 
 <style lang='scss'>
 
-.slideUp-enter{
-  transform: translateY(150px)
-}
-.slideUp-enter-to{
-  transform: translateX(0)
-}
-.slideUp-enter-active{
-  transition: all .6s  ease;
-}
+// .slideUp-enter{
+//   transform: translateY(150px)
+// }
+// .slideUp-enter-to{
+//   transform: translateX(0)
+// }
+// .slideUp-enter-active{
+//   transition: all .6s  ease;
+// }
 
 
 .contact-container{

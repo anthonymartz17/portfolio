@@ -10,9 +10,9 @@
             <i class="fas fa-laptop-code fa-2x"></i>
             <h5>Technical Skills</h5>
           </div>
-          <ul class="about-skills-list">
+          <transition-group name="list" class="about-skills-list" tag="ul">
             <li v-for="(skill, key) in techSkills" :key="key">{{skill}}</li>
-          </ul>
+          </transition-group>
         </div>
       
         <div class="about-skills-otherskills pageAnimation">
@@ -20,9 +20,9 @@
             <i class="fas fa-hands-helping fa-2x"></i>
             <h5>Other Skills</h5>
           </div>
-          <ul class="about-skills-list">
+          <transition-group name="list" tag="ul" class="about-skills-list">
             <li  v-for="(skill, key) in otherSkills" :key="key">{{skill}}</li>
-          </ul>
+          </transition-group>
         </div>
     
       </div>
@@ -59,6 +59,16 @@ export default {
 </script>
 
 <style lang='scss'>
+
+.list-enter{
+  transform: translateY(200px);
+}
+.list-enter-to{
+  transform: translateY(0px);
+}
+.list-enter-active{
+  transition: all .6s .8s ease-in-out;
+}
 
 .pageAnimation{
   animation: page .8s ease-in-out ;

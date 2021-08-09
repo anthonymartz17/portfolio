@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="container">
+        <!-- modal for mobile view menu -->
         <transition name="fade">
         <div class="modal" v-show="mobileNav" @click="toggleMobileNav"></div>
         </transition>
@@ -20,7 +21,7 @@
           </nav>
         </aside>
         
-        <transition name="slide">
+        <transition name="menu-slides">
         <aside class="side-nav" v-show="mobileNav">
           <div class="logo">
             <p>Martz</p>
@@ -31,7 +32,9 @@
         </aside>
         </transition>
       <main>
+        <transition name="router-fades" appear>
         <routerView @toggleTrue= toggleBigName($event)  @toggleFalse= toggleBigName($event) />
+        </transition>
       </main>
       <footer>
         <app-footer/>
@@ -100,6 +103,16 @@
 </script>
 
 <style lang="scss">
+.menu-slides-enter, .menu-slides-leave-to{
+  transform: translateX(-250px);
+}
+.menu-slides-enter-to, .menu-slides-leave{
+  transform: translateX(0px);
+}
+.menu-slides-enter-active, .menu-slides-leave-active{
+  transition: all .3s ease-in-out;
+}
+
 
 .toggleIt-enter,.toggleIt-leave-to{
   transform: translateY(80px);
@@ -113,20 +126,19 @@
 }
 
 
-
-
-
-.slide-enter,.slide-leave-to{
+.router-fades-enter{
    
-   transform: translateX(-250px);
+   transform: translateY(15px);
+   opacity: 0;
  
 }
-.slide-enter-active,.slide-leave-active{
+.router-fades-enter-active{
   transition: all .4s ease-in-out ;
 
 }
-.slide-enter-to, .slide-leave{
+.router-fades-enter-to{
   transform: translateX(0px);
+  opacity: 1;
 }
 
 .fade-enter, .fade-leave-to {
@@ -134,7 +146,7 @@
 }
 
 .fade-enter-active, .fade-leave-active{
-  transition: opacity .4s ease-in-out;
+  transition: opacity .3s ease-in-out;
   
 }
 

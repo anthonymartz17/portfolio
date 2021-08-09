@@ -8,18 +8,24 @@
     <div class="contact-info">
 
       <form action="">
+        <transition name="slideUp">
         <div>
           <label for="name"></label>
           <input v-model="msg" class="field" type="text" id="name" placeholder="Full Name*" required>
         </div>
+        </transition>
+        <transition name="slideUp">
         <div>
           <label for="email"></label>
           <input class="field" type="email" id="email" placeholder="Email*" required>
         </div>
-        
+         </transition>
+        <transition name="slideUp">
         <textarea  name="textarea" id="" cols="30" rows="10" placeholder="Message*" required></textarea>
-        
+        </transition>
+        <transition name="slideUp" transition-delay: 1s;>
         <button type="submit">Send</button>
+         </transition>
       </form>
      
 
@@ -65,6 +71,17 @@ export default {
 </script>
 
 <style lang='scss'>
+
+.slideUp-enter{
+  transform: translateY(150px)
+}
+.slideUp-enter-to{
+  transform: translateX(0)
+}
+.slideUp-enter-active{
+  transition: all .6s  ease;
+}
+
 
 .contact-container{
 //  background: red;
@@ -124,7 +141,7 @@ export default {
     font:$font-title-md;
     cursor: pointer;
     transition: all 250ms ease-in-out;
-
+    
     &:hover{
       background: $light-primary;
     }

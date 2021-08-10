@@ -177,10 +177,18 @@
   
   @include mobile{
     grid-template-columns: 0fr 6fr;
+    grid-template-rows: .8fr 6fr 1fr;
   }
   
   
   header{
+
+     display: flex;
+     grid-area: header;
+     justify-content: center;
+    background:$white;
+   box-shadow: $bx-shadow;
+   overflow: hidden;
 
    @include mobile{
      display: flex;
@@ -195,7 +203,7 @@
      top: 50%;
      left: 10%;
      transform: translateY(-50%);
-     font-size: 1.2em;
+     font-size: 1.3em;
      color: $primary;
      cursor: pointer;
 
@@ -205,12 +213,7 @@
 
    
  
- display: flex;
-     grid-area: header;
- justify-content: center;
-    background:$white;
-   box-shadow: $bx-shadow;
-   overflow: hidden;
+
   
   .my-huge-name{
     display: inline-block;
@@ -271,6 +274,9 @@
   main{
   grid-area: main;
   overflow: hidden;  
+   @include mobile{
+     overflow-y: auto;
+   }
   
   }
   footer{

@@ -133,6 +133,11 @@ export default {
   // background: red;
   margin: 2em 3em;
 
+  @include mobile{
+     margin: 2em;
+     
+  }
+
    h2{
        font:$font-title-lg;
        color: $dark;
@@ -149,6 +154,8 @@ export default {
   position: relative;
    @include mobile{
    flex-direction: column;
+   
+ 
   
   }
  
@@ -170,10 +177,10 @@ export default {
   
     @include mobile{
    width: 100%;
-   height: 20%;
    position: static;
    padding: 0;
    align-items: center;
+   flex: 1;
   
   }
 
@@ -224,10 +231,11 @@ font-size: 1.7em;
   position: relative;
   
   @include mobile{
-  // border-radius: 50px;
+
   width:100% ;
-  height: 35%;
   margin: 0;
+  flex: 1.5;
+  z-index: 0;
   
   }
 
@@ -255,9 +263,9 @@ font-size: 1.7em;
   justify-self: center;
    font-size: 1em;
    width: 100%;
-   height: 20%;
    padding: 0;
    position: static;
+   flex: 1;
   }
 
  div{

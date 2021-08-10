@@ -72,6 +72,7 @@ export default {
   @include mobile{
        
        height: 62vh;
+       margin: 2em;
       
       }
 
@@ -83,17 +84,15 @@ export default {
    }
  
 &-container{
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // grid-template-rows: auto;
+
   display: flex;
   justify-content: space-evenly;
   gap: 1em;
-  // max-width: 100%;
   height: 100%;
-  overflow-y: auto;
+
   
   @include mobile{
+       height: auto;
        display: block;
        padding-block: 1em;
       }

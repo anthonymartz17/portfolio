@@ -20,9 +20,9 @@
             <i class="fas fa-hands-helping fa-2x"></i>
             <h5>Other Skills</h5>
           </div>
-          <transition-group name="list" tag="ul" class="about-skills-list">
+          <ul class="about-skills-list">
             <li  v-for="(skill, key) in otherSkills" :key="key">{{skill}}</li>
-          </transition-group>
+          </ul>
         </div>
     
       </div>
@@ -91,8 +91,9 @@ export default {
   height: 74vh;
  
  @include mobile{
-  //  height: 65vh;
-  overflow-y: auto;
+   margin: 2em;
+  height: auto;
+ 
  }
    
 h2{
@@ -105,6 +106,12 @@ h2{
     font:$font-text;
     color: $dark;
     margin-block: 1em;
+
+    // @include mobile{
+    //   background: $white;
+    //   padding: .5em;
+    //   border-radius: 5px;
+    // }
     
   }
 
@@ -115,8 +122,6 @@ h2{
     gap: 5em;
     margin-block: 3em;
     
-
-   
    @include mobile{
      flex-direction: column;
      gap: 3em;
@@ -147,8 +152,12 @@ h2{
        text-align: start;
        flex: 1; 
        @include mobile{
-
-        padding: 1em 5em;
+        padding: 1em 1em;
+        border: none;
+        align-self: center;
+        width: 70%;
+        
+        
       }
     }
    

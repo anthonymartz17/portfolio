@@ -90,6 +90,7 @@ export default {
 
   @include mobile{
      height: 65vh;
+     margin: 2em;
   }
   
   

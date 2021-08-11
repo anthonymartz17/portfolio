@@ -17,7 +17,7 @@
             <p>Martz</p>
           </div>
           <nav>
-            <app-navlinks/>
+            <Navlinks/>
           </nav>
         </aside>
         
@@ -26,18 +26,21 @@
           <div class="logo">
             <p>Martz</p>
           </div>
+
+          <!-- mobile menu -->
           <nav>
-          <app-navlinks :toggleMobileNav="toggleMobileNav"/>
+           <Navlinks :toggleMobileNav="toggleMobileNav"/>
           </nav>
         </aside>
         </transition>
       <main>
+        
         <transition name="router-fades" appear>
         <routerView @toggleTrue= toggleBigName($event)  @toggleFalse= toggleBigName($event) />
         </transition>
       </main>
       <footer>
-        <app-footer/>
+        <Footer/>
       </footer>
     </div>
   </div> 
@@ -51,8 +54,8 @@
 
   export default {
     components:{
-      'app-navlinks': Navlinks,
-      'app-footer': Footer,
+      Navlinks,
+      Footer,
     },
     data(){
       return{
@@ -223,6 +226,7 @@
     @include mobile{
     
       font:$font-jumboName-mobile;
+      padding-left: 1em;
       
       
     }

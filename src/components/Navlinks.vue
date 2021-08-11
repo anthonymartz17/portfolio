@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
-      <li @click="toggleMobileNav">
+      <li @click="toggleMobileNav(); isHome($event)">
        <router-link :to="{name:link.name}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  
   props:['toggleMobileNav'],
   data(){
     return{
@@ -27,7 +28,9 @@ export default {
     }
   },
   methods:{
-    
+    isHome(e){
+      console.log(e)
+    }
   }
 
 }

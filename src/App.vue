@@ -8,7 +8,7 @@
       <header>
         <i @click="toggleMobileNav" class="fas fa-bars " v-show="mobile"></i>
         <transition name="toggleIt">
-        <h1 class="my-huge-name" v-show="toggle"> Antonio Martinez</h1>
+        <h1 class="my-huge-name" v-show="showName"> Antonio Martinez</h1>
         </transition>
       </header>
        
@@ -29,14 +29,14 @@
 
           <!-- mobile menu -->
           <nav>
-           <Navlinks :toggleMobileNav="toggleMobileNav"/>
+           <Navlinks :toggleMobileNav="toggleMobileNav" :toggleBigName="toggleBigName"/>
           </nav>
         </aside>
         </transition>
       <main>
         
         <transition name="router-fades" appear>
-        <routerView @toggleTrue= toggleBigName($event)  @toggleFalse= toggleBigName($event) />
+        <routerView/>
         </transition>
       </main>
       <footer>
@@ -62,7 +62,7 @@
         
         mobile:false,
         mobileNav:false,
-        toggle:null
+        showName:false
        
       }
     
@@ -75,8 +75,8 @@
  
     methods:{
          
-         toggleBigName(e){
-         this.toggle = e
+         toggleBigName(toggle){
+         this.showName = toggle
 
          },
 

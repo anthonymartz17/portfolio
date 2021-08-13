@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
-      <li @click="toggleMobileNav(); isHome($event,key)">
+      <li @click="toggleMobileNav(); isHome(link)">
        <router-link :to="{name:link.name}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
@@ -14,7 +14,7 @@
 <script>
 export default {
   
-  props:['toggleMobileNav', 'toggleBigName'],
+  props:['toggleMobileNav'],
   data(){
     return{
       
@@ -28,14 +28,12 @@ export default {
     }
   },
   methods:{
-    isHome(e,key){
-     
-      if(e.currentTarget.firstElementChild.classList.contains('router-link-exact-active') && key === 0){
-        console.log(e.currentTarget.firstElementChild.textContent)
+    isHome(link){
+    
+        
+      this.$emit('isHome',link)
+      // console.log(link)
 
-        this.$emit('isHome')
-      }
-      
     }
   }
 

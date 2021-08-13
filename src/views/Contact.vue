@@ -65,7 +65,8 @@ export default {
       checkedNames:[]
 
     }
-  }
+  },
+
 
 }
 </script>

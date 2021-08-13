@@ -8,7 +8,7 @@
       <header>
         <i @click="toggleMobileNav" class="fas fa-bars " v-show="mobile"></i>
         <transition name="toggleIt">
-        <h1 class="my-huge-name" v-show="showName"> Antonio Martinez</h1>
+        <h1 class="my-huge-name" v-show="!showName"> Antonio Martinez</h1>
         </transition>
       </header>
        
@@ -29,7 +29,7 @@
 
           <!-- mobile menu -->
           <nav>
-           <Navlinks :toggleMobileNav="toggleMobileNav" :toggleBigName="toggleBigName"/>
+           <Navlinks :toggleMobileNav="toggleMobileNav" @isHome="toggleBigName($event)"/>
           </nav>
         </aside>
         </transition>
@@ -62,7 +62,8 @@
         
         mobile:false,
         mobileNav:false,
-        showName:false
+        showName:false,
+        
        
       }
     
@@ -71,12 +72,22 @@
     
      window.addEventListener('resize',this.handledesktopMenu)
       this.handledesktopMenu()
+       
+    },
+    updated(){
+     
+     
     },
  
     methods:{
+
          
-         toggleBigName(toggle){
-         this.showName = toggle
+         toggleBigName(val){
+         if(val.id === 1){
+           this.showName = true
+         }else{
+           this.showName = false
+         }
 
          },
 

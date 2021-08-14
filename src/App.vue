@@ -3,10 +3,10 @@
     <div class="container">
         <!-- modal for mobile view menu -->
         <transition name="fade">
-        <div class="modal" v-show="mobileNav" @click="toggleMobileNav"></div>
+        <div class="modal" v-show="mobileNav" @click="toggleMobileMenu"></div>
         </transition>
       <header>
-        <i @click="toggleMobileNav" class="fas fa-bars " v-show="mobile"></i>
+        <i @click="toggleMobileMenu" class="fas fa-bars " v-show="mobile"></i>
         <transition name="toggleIt">
         <h1 class="my-huge-name" v-show="!showName"> Antonio Martinez</h1>
         </transition>
@@ -17,7 +17,7 @@
             <p>Martz</p>
           </div>
           <nav>
-            <Navlinks/>
+            <Navlinks :toggleMobileNav="toggleMobileMenu" @isRouteHome="toggleBigName($event)" :links="links"/>
           </nav>
         </aside>
         
@@ -29,7 +29,7 @@
 
           <!-- mobile menu -->
           <nav>
-           <Navlinks :toggleMobileNav="toggleMobileNav" @isHome="toggleBigName($event)"/>
+           <Navlinks :toggleMobileNav="toggleMobileMenu" @isRouteHome="toggleBigName($event)" :links="links"/>
           </nav>
         </aside>
         </transition>
@@ -63,6 +63,12 @@
         mobile:false,
         mobileNav:false,
         showName:false,
+        links:[
+        {id:1, link:"Home", class:"fas fa-home", name:'Home'},
+        {id:2, link:"About", class:"far fa-address-card", name:'About'},
+        {id:3, link:"Projects", class:"fas fa-briefcase", name:'Projects'},
+        {id:4, link:"Contact", class:"far fa-envelope", name:'Contact'},
+      ]
         
        
       }
@@ -71,7 +77,9 @@
     created(){
     
      window.addEventListener('resize',this.handledesktopMenu)
-      this.handledesktopMenu()
+     window.addEventListener('onload',this.isHome)
+     this.isHome()
+     this.handledesktopMenu()
        
     },
     updated(){
@@ -80,22 +88,28 @@
     },
  
     methods:{
-
+      // on page load, checks if current route is home to hide big name on header
+         isHome(){
+           if(this.$route.name == 'Home'){
+             this.showName = true
+           }
+         },
          
+         // when clicking main navLinks, checks if current route is home to hide big name on header
          toggleBigName(val){
-         if(val.id === 1){
-           this.showName = true
-         }else{
-           this.showName = false
-         }
+           if(val.name =='Home'){
+             this.showName = true
 
+           }else{
+             this.showName = false
+           }
          },
 
+        //  shows mobile view
          handledesktopMenu(){
             if(window.innerWidth <= 414){
 
              this.mobile = true
-        
              
            } else{
              this.mobile = false
@@ -103,7 +117,9 @@
            }
 
          },
-         toggleMobileNav(){
+
+
+         toggleMobileMenu(){
            if(window.innerWidth <= 414){
 
              this.mobileNav = !this.mobileNav

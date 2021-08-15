@@ -10,8 +10,12 @@
             <i class="fas fa-laptop-code fa-2x"></i>
             <h5>Technical Skills</h5>
           </div>
-          <transition-group name="list" class="about-skills-list" tag="ul">
-            <li v-for="(skill, key) in techSkills" :key="key">{{skill}}</li>
+          <transition-group name="list" class="about-skills-list tech-list" tag="ul">
+            <li v-for="(skill, key) in techSkills" :key="key">
+              <i :class="skill.iconClass" :style="{ fontSize:'2em'}"></i>
+              <span> {{skill.skill}}</span>
+              
+              </li>
           </transition-group>
         </div>
       
@@ -20,7 +24,7 @@
             <i class="fas fa-hands-helping fa-2x"></i>
             <h5>Other Skills</h5>
           </div>
-          <ul class="about-skills-list">
+          <ul class="about-skills-list otherskills-list">
             <li  v-for="(skill, key) in otherSkills" :key="key">{{skill}}</li>
           </ul>
         </div>
@@ -49,7 +53,19 @@ export default {
       pageAni:false,
       aboutHeading:'About Me',
       aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat.',
-      techSkills:["HTML5","CSS3","JavaScript","Vue.js/Vuex","Bootstrap","Sass"],
+      techSkills:[
+        
+        {skill:"JavaScript", color:'#f0db4f', iconClass:"fab fa-js", background:'#323330'},
+        {skill:"Vue.js/Vuex", color:'#42b883', iconClass:"fab fa-vuejs"},
+        {skill:"Sass", color:'#cc6699', iconClass:"fab fa-sass"},
+        {skill:"CSS3", color:'#264de4', iconClass:"fab fa-css3"},
+        {skill:"Bootstrap", color:'#563d7c', iconClass:"fab fa-bootstrap"},
+        {skill:"HTML5", color:'#e34c26', iconClass:"fab fa-html5"},
+        
+        ],
+
+
+
       otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"]
             
     }
@@ -122,6 +138,7 @@ h2{
     gap: 5em;
     margin-block: 3em;
     
+    
    @include mobile{
      flex-direction: column;
      gap: 3em;
@@ -145,27 +162,41 @@ h2{
     }
 
      &-list {
-       
-       
-       padding: 3em;
+      //  background: red;
+      padding: 1em;
+       display: grid;
+      
+       align-items: baseline;
        border-right: 1px solid lighten($dark, 40%);
        text-align: start;
        flex: 1; 
        @include mobile{
-        padding: 1em 1em;
+        // padding-left: 4em;
         border: none;
-        align-self: center;
+        // align-self: center;
         width: 70%;
-        
+        height: 50vh;
+      
         
       }
     }
-   
+    
+    &-otherskills{
+      
+         li::before{
+      content: '-';
+      font-weight: 900;
+      padding-right: .4em;
+      color: $dark;
+    }
+    
+    }
+
      &-techskills, &-otherskills{
-       height: 35vh;
+       height: 40vh;
        flex: 1;
        display: flex;
-       gap: 2em;
+       gap: 3em;
        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
        color: $dark;
        position: relative;
@@ -175,21 +206,34 @@ h2{
       @include mobile{
 
         flex-direction: column;
+        gap: 1em;
    }
    
    
     li{
       line-height: 1.8;
     }
-    li::before{
-      content: '-';
-      font-weight: 900;
-      padding-right: .4em;
-      color: $dark;
-    }
+ 
   }
     
   }
+
+  // .tech-list{
+    
+  //        @include mobile{
+  //       padding-left: 4em; 
+        
+      
+  //     }
+  // }
+  // .otherskills-list{
+    
+  //        @include mobile{
+  //       padding-left: 3em; 
+        
+      
+  //     }
+  // }
  
 
 }

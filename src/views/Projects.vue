@@ -4,8 +4,12 @@
     <h2>My Work</h2>
 
   <div class="projects-section-container">
-
-    <div :class="[project.class]" v-for="(project,key) in projects" :key="key">
+   
+    <div :class="[project.classContainer]" v-for="(project,key) in projects" :key="key">
+      <div :class="project.classDesktop"></div>
+      <transition name="slideDown" appear>
+      <div :class="project.classMobile"></div>
+      </transition>
       <div class="overlay">
       <h3>{{project.projectName}}</h3>
       <p>{{project.description}}}</p>
@@ -29,32 +33,25 @@ export default {
       projects:[
         {
           projectName:'To Do App', 
-          img:'@/assets/images/todoApp.png', 
           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-          alt:'tasks app',
-          class:"each-project project1"
-          },
-        {
-          projectName:'Weather App', 
-          img:"@/assets/images/weatherApp.png", 
-          description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-          alt:'weather app image',
-          class:"each-project project2"
+          classContainer:"each-project",
+          classDesktop:"desktop1",
+          classMobile:"mobile1"
           },
         {
           projectName:'Landing Page', 
-          img:"@/assets/images/aria-website.png", 
           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-          alt:'landing page image',
-          class:"each-project project3"
+          classContainer:"each-project",
+          classDesktop:"desktop2",
+          classMobile:"mobile2"
           },
-          // {
-          //   projectName:'Github Finder', 
-          //   img:"@/assets/images/github-finder.png", 
-          //   description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-          //   alt:'githup finder image',
-          //   class:"each-project project4"
-          //   },
+          {
+            projectName:'Github Finder', 
+            description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+            classContainer:"each-project",
+            classDesktop:"desktop3",
+            classMobile:"mobile3"
+            },
       ]
     }
   }
@@ -89,6 +86,8 @@ export default {
   justify-content: space-evenly;
   gap: 1em;
   height: 100%;
+  // background: lightgray;
+  
 
   
   @include mobile{
@@ -101,27 +100,64 @@ export default {
 
 }
 
-$projectImg:(
-   "project1":'../assets/images/todoApp.png',
-   "project2":'../assets/images/weatherApp.png',
-  //  "project3":'../assets/images/github-finder.png',
-   "project3":'../assets/images/aria-website.png'
+$desktopImg:(
+   "desktop1":'../assets/images/todo-desktop.png',
+   "desktop2":'../assets/images/github-finder-desktop.png',
+   "desktop3":'../assets/images/landing-desktop.png'
+);
+$mobileImg:(
+   "mobile1":'../assets/images/todo-mobile.png',
+   "mobile2":'../assets/images/github-finder-mobile.png',
+   "mobile3":'../assets/images/landing-mobile.png'
 );
 
-@each $name,$img in $projectImg{
+
+
+@each $name,$img in $desktopImg{
   .#{$name}{
+    
+     position: absolute;
+     top: 0;
+     left: 0;
      background-image: url($img);
-     background-size: contain;
+     background-size: cover;
+     background-position: center;
      background-repeat: no-repeat;
-     box-shadow: $bx-shadow;
-     height: 38vh;
-     overflow: hidden;
+     width: 100%;
+     height: 40vh;
+  
   }
+}
+@each $name,$img in $mobileImg{
+  .#{$name}{
+    
+     position: absolute;
+     bottom: -40px;
+     left: 0;
+     background-image: url($img);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     width: 100%;
+     height: 38vh;
+  
+  }
+}
+.slideDown-enter, .slideDown-leave-to{
+  transform: translateY(-110px);
+}
+.slideDown-enter-active, .slideDown-leave-active{
+  transition: all .4s .6s ease-in-out;
+}
+.slideDown-enter-to,.slideDown-leave{
+   transform: translateY(0px);
 }
 
 .each-project{
   position: relative;
   flex:1;
+  height: 60vh;
+  // border:1px solid lightblue;
  @include mobile{
         margin-bottom: 1em;
       }
@@ -132,7 +168,7 @@ $projectImg:(
     left: 0%;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.40);
+    background: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: all 300ms ease-in-out;
      display: flex;

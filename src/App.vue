@@ -1,5 +1,8 @@
 <template>
   <div>
+    <transition name="modal-component">
+   <ModalProjects v-show="moreAboutProject" :moreAboutProject="moreAboutProject" @closeModal="toggleMoreAboutProject"/>
+   </transition>
     <div class="container">
         <!-- modal for mobile view menu -->
         <transition name="fade">
@@ -36,7 +39,7 @@
       <main>
         
         <transition name="router-fades" appear>
-        <routerView/>
+        <routerView @showMoreEvent="toggleMoreAboutProject($event)"/>
         </transition>
       </main>
       <footer>
@@ -51,11 +54,13 @@
 
   import Navlinks from './components/Navlinks.vue';
   import Footer from './components/Footer.vue';
+  import ModalProjects from './components/Modal-projects.vue';
 
   export default {
     components:{
       Navlinks,
       Footer,
+      ModalProjects
     },
     data(){
       return{
@@ -63,6 +68,8 @@
         mobile:false,
         mobileNav:false,
         showName:false,
+        moreAboutProject: false,
+
         links:[
         {id:1, link:"Home", class:"fas fa-home", name:'Home'},
         {id:2, link:"About", class:"far fa-address-card", name:'About'},
@@ -125,6 +132,20 @@
              this.mobileNav = !this.mobileNav
            }
           },
+
+          toggleMoreAboutProject(e){
+            //  console.log(e)
+            //  console.log(project)
+            if(e.target.textContent === 'Read more'){
+              // console.log(e.target.textContent)
+              this.moreAboutProject = !this.moreAboutProject
+            }else if(e.target.className){
+              this.moreAboutProject = !this.moreAboutProject
+            }
+            
+          }
+
+          
          
           
       }
@@ -133,6 +154,17 @@
 </script>
 
 <style lang="scss">
+// .modal-component-enter,.modal-component-leave-to{
+//   opacity: 0;
+// }
+// .modal-component-enter-active, .modal-component-leave-active{
+//   transition: all 1s ease-in-out;
+// }
+
+// .modal-component-enter-to,.modal-component-leave{
+//   opacity: 1;
+// }
+
 .menu-slides-enter, .menu-slides-leave-to{
   transform: translateX(-250px);
 }

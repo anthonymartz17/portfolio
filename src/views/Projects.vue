@@ -14,7 +14,7 @@
       <h3>{{project.projectName}}</h3>
       <p>{{project.description}}}</p>
       <div class="btn-container">
-        <a href="#">Read more</a>
+        <a href="#" @click="showMore($event,project)">Read more</a>
         <a href="https://www.w3schools.com/cssref/pr_border-color.asp" target="_blank">View Code</a>
       </div>
       </div>
@@ -32,6 +32,7 @@ export default {
     return{
       projects:[
         {
+          id:1,
           projectName:'To Do App', 
           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
           classContainer:"each-project",
@@ -39,6 +40,7 @@ export default {
           classMobile:"mobile1"
           },
         {
+          id:2,
           projectName:'Landing Page', 
           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
           classContainer:"each-project",
@@ -46,6 +48,7 @@ export default {
           classMobile:"mobile2"
           },
           {
+             id:3,
             projectName:'Github Finder', 
             description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
             classContainer:"each-project",
@@ -53,6 +56,12 @@ export default {
             classMobile:"mobile3"
             },
       ]
+    }
+  },
+  methods:{
+    showMore(e){
+      this.$emit('showMoreEvent', e)
+      
     }
   }
 
@@ -170,7 +179,7 @@ $mobileImg:(
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     opacity: 0;
-    transition: all 300ms ease-in-out;
+    transition: all 500ms ease-in-out;
      display: flex;
   flex-direction: column;
   align-items: center;

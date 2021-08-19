@@ -69,6 +69,7 @@
         mobileNav:false,
         showName:false,
         moreAboutProject: false,
+        ProjectsProps:null,
 
         links:[
         {id:1, link:"Home", class:"fas fa-home", name:'Home'},
@@ -134,11 +135,11 @@
           },
 
           toggleMoreAboutProject(e){
+           
             //  console.log(e)
-            //  console.log(project)
-            if(e.target.textContent === 'Read more'){
-              // console.log(e.target.textContent)
+            if(e.id){
               this.moreAboutProject = !this.moreAboutProject
+              this.ProjectsProps = e
             }else if(e.target.className){
               this.moreAboutProject = !this.moreAboutProject
             }

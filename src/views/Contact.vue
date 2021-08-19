@@ -7,47 +7,25 @@
 
     <div class="contact-info">
 
-      <form action="">
-        <transition name="slideUp">
-        <div>
+      
+      <transition-group tag="form"
+      @before-enter="beforeEnter"
+      :css="true"
+      name="slideUp"
+      appear
+      >
+        <div key="name" id="1">
           <label for="name"></label>
           <input v-model="msg" class="field" type="text" id="name" placeholder="Full Name*" required>
         </div>
-        </transition>
-        <transition name="slideUp">
-        <div>
+        <div key="email" id="2">
           <label for="email"></label>
           <input class="field" type="email" id="email" placeholder="Email*" required>
         </div>
-         </transition>
-        <transition name="slideUp">
-        <textarea  name="textarea" id="" cols="30" rows="10" placeholder="Message*" required></textarea>
-        </transition>
-        <transition name="slideUp" transition-delay: 1s;>
-        <button type="submit">Send</button>
-         </transition>
-      </form>
-     
-
-
-
+        <textarea key="textarea"  name="textarea" id="3" cols="30" rows="10" placeholder="Message*" required></textarea>
+        <button id="4" key="btn" type="submit">Send</button>
+         </transition-group>
       
-        <!-- <a class="contact-info-contacts" href="#">
-        <div class="contact-info-iconname">
-        <i class="far fa-envelope fa-2x"></i>
-        <p class="icon-text">E-mail</p>
-        </div>
-        <p>antonio.fr.martinezc@hotmail.com</p>
-        </a>
-      
-      
-        <a class="contact-info-contacts" href="https://github.com/anthonymartz17?tab=repositories" target="_blank">
-        <div class="contact-info-iconname">
-        <i class="fab fa-github fa-2x"></i>
-        <p class="icon-text">Github</p>
-        </div>
-        <p>anthonymartz17</p>
-        </a> -->
       
     </div>
     </div>
@@ -67,21 +45,51 @@ export default {
     }
   },
 
+  methods:{
+
+    beforeEnter(el){
+          console.log(typeof(el))
+      // el.array.forEach((one,index) => {
+      //   one.style.transitionDelay=`.${index}s`
+      // });
+      // if(el.id == 1){
+      //   el.style.transitionDelay=`.${el.id}s`
+      // }
+      // else if(el.id == 2){
+      //   el.style.transitionDelay=`.${el.id}s`
+      // }
+      // else if(el.id == 3){
+      //   el.style.transitionDelay=`.${el.id}s`
+      // }
+      // else if(el.id == 4){
+      //   el.style.transitionDelay=`.6s`
+      // }
+   
+    },
+   
+   
+  }
+
 
 }
 </script>
 
 <style lang='scss'>
 
-// .slideUp-enter{
-//   transform: translateY(150px)
-// }
-// .slideUp-enter-to{
-//   transform: translateX(0)
-// }
-// .slideUp-enter-active{
-//   transition: all .6s  ease;
-// }
+// .fading-enter{
+
+.slideUp-enter{
+  transform: translateY(150px);
+  opacity: 0;
+  
+}
+.slideUp-enter-to{
+  transform: translateX(0);
+  opacity: 1;
+}
+.slideUp-enter-active{
+  transition: all .6s  ease;
+}
 
 
 .contact-container{

@@ -14,7 +14,7 @@
       <h3>{{project.projectName}}</h3>
       <p>{{project.description}}}</p>
       <div class="btn-container">
-        <a href="#" @click="showMore($event,project)">Read more</a>
+        <a href="#" @click="showMore(project)">Read more</a>
         <a href="https://www.w3schools.com/cssref/pr_border-color.asp" target="_blank">View Code</a>
       </div>
       </div>
@@ -59,9 +59,9 @@ export default {
     }
   },
   methods:{
-    showMore(e){
-      this.$emit('showMoreEvent', e)
-      
+    showMore(project){
+      this.$emit('showMoreEvent',project)
+       
     }
   }
 

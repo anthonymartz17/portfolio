@@ -10,8 +10,15 @@
             <i class="fas fa-laptop-code fa-2x"></i>
             <h5>Technical Skills</h5>
           </div>
-          <transition-group name="list" class="about-skills-list tech-list" tag="ul">
-            <li v-for="(skill, key) in techSkills" :key="key">
+          <transition-group
+           name="slideUp"
+           class="about-skills-list tech-list"
+           tag="ul"
+           appear
+           @before-enter="beforeEnter"
+           
+           >
+            <li v-for="(skill, key) in techSkills" :key="key" :id="key">
               <i :class="skill.iconClass" :style="{ fontSize:'2em'}"></i>
               <span> {{skill.skill}}</span>
               
@@ -45,7 +52,28 @@ export default {
   methods:{
     handlePageAni(){
         this.pageAni = !this.pageAni
-    }
+    },
+
+  beforeEnter(el){
+     console.log(typeof(el.parentElement))
+      if(el.id == 1){
+        el.style.transitionDelay=`.${el.id}s`
+      }
+      else if(el.id == 2){
+        el.style.transitionDelay=`.${el.id}s`
+      }
+      else if(el.id == 3){
+        el.style.transitionDelay=`.${el.id}s`
+      }
+      else if(el.id == 4){
+        el.style.transitionDelay=`.5s`
+      }
+   
+    },
+
+
+
+
   },
   data(){
     return{

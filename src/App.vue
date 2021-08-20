@@ -10,8 +10,11 @@
         </transition>
       <header>
         <i @click="toggleMobileMenu" class="fas fa-bars " v-show="mobile"></i>
-        <transition name="toggleIt">
-        <h1 class="my-huge-name" v-show="!showName"> Antonio Martinez</h1>
+        <transition 
+          enter-active-class="animate__animated animate__slideInUp"  
+          leave-active-class="animate__animated animate__slideOutDown"
+        >
+        <h1 class="my-huge-name" v-show="!$store.state.showName"> Antonio Martinez</h1>
         </transition>
       </header>
        
@@ -77,6 +80,8 @@
         {id:3, link:"Projects", class:"fas fa-briefcase", name:'Projects'},
         {id:4, link:"Contact", class:"far fa-envelope", name:'Contact'},
       ]
+
+      
         
        
       }
@@ -98,9 +103,8 @@
     methods:{
       // on page load, checks if current route is home to hide big name on header
          isHome(){
-           if(this.$route.name == 'Home'){
-             this.showName = true
-           }
+           this.$store.commit('isHome',this.$route)
+        
          },
          
          // when clicking main navLinks, checks if current route is home to hide big name on header
@@ -155,6 +159,15 @@
 </script>
 
 <style lang="scss">
+     
+   
+
+  //  .animate__bounceInUp{
+  //    color:$light ;
+  //    animation-duration: .3s;
+  //  }
+
+
 // .modal-component-enter,.modal-component-leave-to{
 //   opacity: 0;
 // }

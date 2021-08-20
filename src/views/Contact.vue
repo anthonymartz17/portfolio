@@ -16,7 +16,7 @@
       >
         <div key="name" id="1">
           <label for="name"></label>
-          <input v-model="msg" class="field" type="text" id="name" placeholder="Full Name*" required>
+          <input class="field" type="text" id="name" placeholder="Full Name*" required>
         </div>
         <div key="email" id="2">
           <label for="email"></label>
@@ -36,36 +36,15 @@
 export default {
   data(){
     return{
+
       contactTitle:'Contact',
       contactDescription:"Let's work together with dedication and commitment! ",
-      msg:'',
-      checked:false,
-      checkedNames:[]
-
+    
     }
   },
 
   methods:{
 
-    beforeEnter(el){
-          console.log(typeof(el))
-      // el.array.forEach((one,index) => {
-      //   one.style.transitionDelay=`.${index}s`
-      // });
-      // if(el.id == 1){
-      //   el.style.transitionDelay=`.${el.id}s`
-      // }
-      // else if(el.id == 2){
-      //   el.style.transitionDelay=`.${el.id}s`
-      // }
-      // else if(el.id == 3){
-      //   el.style.transitionDelay=`.${el.id}s`
-      // }
-      // else if(el.id == 4){
-      //   el.style.transitionDelay=`.6s`
-      // }
-   
-    },
    
    
   }

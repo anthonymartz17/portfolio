@@ -53,7 +53,7 @@ export default {
  },
   data(){
     return{
-      img:'@/assets/images/saona.jpg',
+    
       bigName:null
       
     }

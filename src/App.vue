@@ -1,48 +1,59 @@
 <template>
   <div>
     <transition name="modal-component">
-   <ModalProjects v-show="moreAboutProject" :moreAboutProject="moreAboutProject" @closeModal="toggleMoreAboutProject"/>
+   <ModalProjects v-show="$store.state.moreAboutProject"/>
    </transition>
     <div class="container">
         <!-- modal for mobile view menu -->
-        <transition name="fade">
-        <div class="modal" v-show="mobileNav" @click="toggleMobileMenu"></div>
+        <transition 
+        enter-active-class="animate__animated animate__fadeIn animate__faster"
+        leave-active-class="animate__animated animate__fadeOut animate__faster"
+        >
+        <div class="modal-mobile-nav" v-show="$store.state.mobileNav" @click="toggleMobileMenu" ></div>
         </transition>
       <header>
-        <i @click="toggleMobileMenu" class="fas fa-bars " v-show="mobile"></i>
+        <i @click="toggleMobileMenu" class="fas fa-bars " v-show="$store.state.mobile"></i>
         <transition 
-          enter-active-class="animate__animated animate__slideInUp"  
-          leave-active-class="animate__animated animate__slideOutDown"
+          enter-active-class="animate__animated animate__slideInUp animate__faster"  
+          leave-active-class="animate__animated animate__slideOutDown animate__faster"
         >
         <h1 class="my-huge-name" v-show="!$store.state.showName"> Antonio Martinez</h1>
         </transition>
       </header>
        
-       <aside class="side-nav" v-show="!mobile">
+       <aside class="side-nav" v-show="!$store.state.mobile">
           <div class="logo">
             <p>Martz</p>
           </div>
           <nav>
-            <Navlinks :toggleMobileNav="toggleMobileMenu" @isRouteHome="toggleBigName($event)" :links="links"/>
+            <Navlinks />
           </nav>
         </aside>
         
-        <transition name="menu-slides">
-        <aside class="side-nav" v-show="mobileNav">
+          <!-- mobile menu -->
+        <transition 
+        enter-active-class="animate__animated animate__slideInLeft animate__faster"
+        leave-active-class="animate__animated animate__slideOutLeft animate__faster"
+        
+        
+        >
+        <aside class="side-nav" v-show="$store.state.mobileNav">
           <div class="logo">
             <p>Martz</p>
           </div>
-
-          <!-- mobile menu -->
           <nav>
-           <Navlinks :toggleMobileNav="toggleMobileMenu" @isRouteHome="toggleBigName($event)" :links="links"/>
+           <Navlinks/>
           </nav>
         </aside>
         </transition>
       <main>
         
-        <transition name="router-fades" appear>
-        <routerView @showMoreEvent="toggleMoreAboutProject($event)"/>
+        <transition
+         appear
+         name="router-animation"
+         
+         >
+        <routerView/>
         </transition>
       </main>
       <footer>
@@ -65,90 +76,46 @@
       Footer,
       ModalProjects
     },
-    data(){
-      return{
-        
-        mobile:false,
-        mobileNav:false,
-        showName:false,
-        moreAboutProject: false,
-        ProjectsProps:null,
-
-        links:[
-        {id:1, link:"Home", class:"fas fa-home", name:'Home'},
-        {id:2, link:"About", class:"far fa-address-card", name:'About'},
-        {id:3, link:"Projects", class:"fas fa-briefcase", name:'Projects'},
-        {id:4, link:"Contact", class:"far fa-envelope", name:'Contact'},
-      ]
-
-      
-        
-       
-      }
     
-    },
     created(){
     
-     window.addEventListener('resize',this.handledesktopMenu)
+     window.addEventListener('resize',this.handleDesktopMenu)
      window.addEventListener('onload',this.isHome)
      this.isHome()
-     this.handledesktopMenu()
+     this.handleDesktopMenu()
        
     },
-    updated(){
-     
-     
-    },
+   
  
     methods:{
       // on page load, checks if current route is home to hide big name on header
          isHome(){
            this.$store.commit('isHome',this.$route)
-        
+           
          },
-         
-         // when clicking main navLinks, checks if current route is home to hide big name on header
-         toggleBigName(val){
-           if(val.name =='Home'){
-             this.showName = true
-
-           }else{
-             this.showName = false
-           }
-         },
-
+               
         //  shows mobile view
-         handledesktopMenu(){
-            if(window.innerWidth <= 414){
-
-             this.mobile = true
-             
-           } else{
-             this.mobile = false
-             this.mobileNav = false
-           }
-
+         handleDesktopMenu(){
+                              this.$store.commit('handleDesktopMenu')
+          
          },
 
 
          toggleMobileMenu(){
-           if(window.innerWidth <= 414){
-
-             this.mobileNav = !this.mobileNav
-           }
+                             this.$store.commit('toggleMobileMenu')
           },
 
-          toggleMoreAboutProject(e){
-           
-            //  console.log(e)
-            if(e.id){
-              this.moreAboutProject = !this.moreAboutProject
-              this.ProjectsProps = e
-            }else if(e.target.className){
-              this.moreAboutProject = !this.moreAboutProject
-            }
+          // toggleMoreAboutProject(e){
+          //                            this.$store.commit('toggleMobileMenu')
+          
+          //   if(e.id){
+          //     this.moreAboutProject = !this.moreAboutProject
+             
+          //   }else if(e.target.className){
+          //     this.moreAboutProject = !this.moreAboutProject
+          //   }
             
-          }
+          // }
 
           
          
@@ -160,35 +127,6 @@
 
 <style lang="scss">
      
-   
-
-  //  .animate__bounceInUp{
-  //    color:$light ;
-  //    animation-duration: .3s;
-  //  }
-
-
-// .modal-component-enter,.modal-component-leave-to{
-//   opacity: 0;
-// }
-// .modal-component-enter-active, .modal-component-leave-active{
-//   transition: all 1s ease-in-out;
-// }
-
-// .modal-component-enter-to,.modal-component-leave{
-//   opacity: 1;
-// }
-
-.menu-slides-enter, .menu-slides-leave-to{
-  transform: translateX(-250px);
-}
-.menu-slides-enter-to, .menu-slides-leave{
-  transform: translateX(0px);
-}
-.menu-slides-enter-active, .menu-slides-leave-active{
-  transition: all .3s ease-in-out;
-}
-
 
 .toggleIt-enter,.toggleIt-leave-to{
   transform: translateY(80px);
@@ -202,31 +140,24 @@
 }
 
 
-.router-fades-enter{
+.router-animation-enter{
    
    transform: translateY(15px);
    opacity: 0;
  
 }
-.router-fades-enter-active{
+.router-animation-enter-active{
   transition: all .4s ease-in-out ;
 
 }
-.router-fades-enter-to{
+.router-animation-enter-to{
   transform: translateX(0px);
   opacity: 1;
 }
 
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
-.fade-enter-active, .fade-leave-active{
-  transition: opacity .3s ease-in-out;
-  
-}
 
-.modal{
+.modal-mobile-nav{
   z-index: 1;
   position: absolute;
   background: rgba(0, 0, 0, 0.534);

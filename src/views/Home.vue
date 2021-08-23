@@ -20,7 +20,7 @@
         </div>
         </div>
         </transition>
-        <transition name="slideRight" appear>
+        <transition  name="slideRight"  appear>
           <div class="greeting-card-text">
             <div>
             <transition name="unhideUpLast" appear>
@@ -38,42 +38,12 @@
 <script>
 export default {
 
-  props:['name'],
-  methods:{
-
-  },
-  
- destroyed(){
-
-      this.$emit('toggleTrue',this.bigName = true)
- },
- created(){
-    
-       this.$emit('toggleFalse',this.bigName = false)
- },
-  data(){
-    return{
-    
-      bigName:null
-      
-    }
-  }
 
 }
 </script>
+
 <style lang='scss'>
 
-// transitions
-
-// .slideUp-enter{
-//   transform: translateY(150px)
-// }
-// .slideUp-enter-to{
-//   transform: translateX(0)
-// }
-// .slideUp-enter-active{
-//   transition: all .6s  ease;
-// }
 
 .slideRight-enter{
   transform: translateX(-50px);

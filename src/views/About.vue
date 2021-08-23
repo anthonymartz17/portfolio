@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="about-container">
-      <h2>{{aboutHeading}}</h2>
-      <p>{{aboutPersonalDescription}}</p>
+      <h2>{{$store.state.aboutHeading}}</h2>
+      <p>{{$store.state.aboutPersonalDescription}}</p>
       
       <div class="about-skills">
-        <div class="about-skills-techskills" :class="{pageAnimation: pageAni}">
+        <div class="about-skills-techskills">
           <div class="about-skills-title">
             <i class="fas fa-laptop-code fa-2x"></i>
             <h5>Technical Skills</h5>
@@ -15,10 +15,10 @@
            class="about-skills-list tech-list"
            tag="ul"
            appear
-           @before-enter="beforeEnter"
+        
            
            >
-            <li v-for="(skill, key) in techSkills" :key="key" :id="key">
+            <li v-for="(skill, key) in $store.state.techSkills" :key="key" :id="key">
               <i :class="skill.iconClass" :style="{ fontSize:'2em'}"></i>
               <span> {{skill.skill}}</span>
               
@@ -32,7 +32,7 @@
             <h5>Other Skills</h5>
           </div>
           <ul class="about-skills-list otherskills-list">
-            <li  v-for="(skill, key) in otherSkills" :key="key">{{skill}}</li>
+            <li  v-for="(skill, key) in $store.state.otherSkills" :key="key">{{skill}}</li>
           </ul>
         </div>
     
@@ -44,60 +44,60 @@
 <script>
 
 export default {
-  mounted(){
-      this.handlePageAni()
+  // mounted(){
+  //     // this.handlePageAni()
      
-  },
+  // },
 
-  methods:{
-    handlePageAni(){
-        this.pageAni = !this.pageAni
-    },
+  // methods:{
+  //   handlePageAni(){
+  //       this.pageAni = !this.pageAni
+  //   },
 
-  beforeEnter(el){
-     console.log(typeof(el.parentElement))
-      if(el.id == 1){
-        el.style.transitionDelay=`.${el.id}s`
-      }
-      else if(el.id == 2){
-        el.style.transitionDelay=`.${el.id}s`
-      }
-      else if(el.id == 3){
-        el.style.transitionDelay=`.${el.id}s`
-      }
-      else if(el.id == 4){
-        el.style.transitionDelay=`.5s`
-      }
+  // beforeEnter(el){
+    
+  //     if(el.id == 1){
+  //       el.style.transitionDelay=`.${el.id}s`
+  //     }
+  //     else if(el.id == 2){
+  //       el.style.transitionDelay=`.${el.id}s`
+  //     }
+  //     else if(el.id == 3){
+  //       el.style.transitionDelay=`.${el.id}s`
+  //     }
+  //     else if(el.id == 4){
+  //       el.style.transitionDelay=`.5s`
+  //     }
    
-    },
+  //   },
 
 
 
 
-  },
-  data(){
-    return{
-      // about component content
-      pageAni:false,
-      aboutHeading:'About Me',
-      aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat.',
-      techSkills:[
+  // },
+  // data(){
+  //   return{
+  //     // about component content
+  //     pageAni:false,
+  //     aboutHeading:'About Me',
+  //     aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat.',
+  //     techSkills:[
         
-        {skill:"JavaScript", color:'#f0db4f', iconClass:"fab fa-js", background:'#323330'},
-        {skill:"Vue.js/Vuex", color:'#42b883', iconClass:"fab fa-vuejs"},
-        {skill:"Sass", color:'#cc6699', iconClass:"fab fa-sass"},
-        {skill:"CSS3", color:'#264de4', iconClass:"fab fa-css3"},
-        {skill:"Bootstrap", color:'#563d7c', iconClass:"fab fa-bootstrap"},
-        {skill:"HTML5", color:'#e34c26', iconClass:"fab fa-html5"},
+  //       {skill:"JavaScript", color:'#f0db4f', iconClass:"fab fa-js", background:'#323330'},
+  //       {skill:"Vue.js/Vuex", color:'#42b883', iconClass:"fab fa-vuejs"},
+  //       {skill:"Sass", color:'#cc6699', iconClass:"fab fa-sass"},
+  //       {skill:"CSS3", color:'#264de4', iconClass:"fab fa-css3"},
+  //       {skill:"Bootstrap", color:'#563d7c', iconClass:"fab fa-bootstrap"},
+  //       {skill:"HTML5", color:'#e34c26', iconClass:"fab fa-html5"},
         
-        ],
+  //       ],
 
 
 
-      otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"]
+  //     otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"]
             
-    }
-  }
+  //   }
+  // }
 
 }
 </script>

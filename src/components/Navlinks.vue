@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ul class="side-bar-links" v-for="(link,key) in links" :key="key">
-      <li @click="toggleMobileNav(); isRouteHome($route)">
+    <ul class="side-bar-links" v-for="(link,key) in $store.state.links" :key="key">
+      <li @click="toggleMobileMenu(); isHome()">
        <router-link :to="{name:link.name}" :class="{tabs:true}">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
@@ -13,14 +13,16 @@
 
 <script>
 export default {
-  
-  props:['toggleMobileNav','links'],
 
   methods:{
 
     // sends current route to the root component to update the showName property
-    isRouteHome(route){
-      this.$emit('isRouteHome',route) 
+    isHome(){
+              this.$store.commit('isHome',this.$route)
+    },
+    
+    toggleMobileMenu(){
+                        this.$store.commit('toggleMobileMenu')
     }
   }
 

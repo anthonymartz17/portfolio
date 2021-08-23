@@ -1,31 +1,49 @@
 <template>
   <div>
     <div class="contact-container">
-      <h2>{{contactTitle}}</h2>
-      <p>{{contactDescription}}</p>
+      <h2>{{$store.state.contactTitle}}</h2>
+      <p>{{$store.state.contactDescription}}</p>
       
 
     <div class="contact-info">
 
       
-      <transition-group tag="form"
-      @before-enter="beforeEnter"
-      :css="true"
-      name="slideUp"
-      appear
-      >
+      <form>
+        <transition
+          appear
+           enter-active-class="animate__animated animate__slideInUp"
+        >
         <div key="name" id="1">
           <label for="name"></label>
           <input class="field" type="text" id="name" placeholder="Full Name*" required>
         </div>
+        </transition>
+
+        <transition
+        appear
+           enter-active-class="animate__animated animate__slideInUp"
+        >
         <div key="email" id="2">
           <label for="email"></label>
           <input class="field" type="email" id="email" placeholder="Email*" required>
         </div>
+      </transition>
+
+        <transition
+        appear
+           enter-active-class="animate__animated animate__slideInUp"
+        >
         <textarea key="textarea"  name="textarea" id="3" cols="30" rows="10" placeholder="Message*" required></textarea>
+        </transition>
+
+        <transition
+        appear
+           enter-active-class="animate__animated animate__slideInUp"
+        >
         <button id="4" key="btn" type="submit">Send</button>
-         </transition-group>
-      
+       </transition>
+
+         </form>
       
     </div>
     </div>
@@ -34,40 +52,15 @@
 
 <script>
 export default {
-  data(){
-    return{
-
-      contactTitle:'Contact',
-      contactDescription:"Let's work together with dedication and commitment! ",
-    
-    }
-  },
-
-  methods:{
-
-   
-   
-  }
-
+ 
 
 }
 </script>
 
 <style lang='scss'>
 
-// .fading-enter{
-
-.slideUp-enter{
-  transform: translateY(150px);
-  opacity: 0;
-  
-}
-.slideUp-enter-to{
-  transform: translateX(0);
-  opacity: 1;
-}
-.slideUp-enter-active{
-  transition: all .6s  ease;
+:root{
+  --animate-delay:.5s
 }
 
 

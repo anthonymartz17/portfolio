@@ -1,19 +1,20 @@
 <template>
   <div>
-    <div class="modal" @click="closeModalEvent($event)">
+    <!-- <div class="modal" @click="closeModalEvent($event)"> -->
 
-    </div>
+    <!-- </div> -->
 
   </div>
 </template>
 
 <script>
 export default {
-  props:["moreAboutProject"],
+  
   methods:{
-    closeModalEvent(e){
-      this.$emit('closeModal',e)
-    }
+    // closeModalEvent(e){
+
+    //   this.$store.commit('closeModal',e)
+    // }
   }
 
 }

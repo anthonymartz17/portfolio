@@ -105,17 +105,7 @@
                              this.$store.commit('toggleMobileMenu')
           },
 
-          // toggleMoreAboutProject(e){
-          //                            this.$store.commit('toggleMobileMenu')
-          
-          //   if(e.id){
-          //     this.moreAboutProject = !this.moreAboutProject
-             
-          //   }else if(e.target.className){
-          //     this.moreAboutProject = !this.moreAboutProject
-          //   }
-            
-          // }
+         
 
           
          

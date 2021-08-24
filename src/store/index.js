@@ -41,6 +41,9 @@ export default new Vuex.Store({
                       {   id:1,
                           projectName:'To Do App', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          moreDescription:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          imgDesktop:'../assets/images/todo-desktop.png',
+                          imgMobile:'../assets/images/todo-mobile.png',
                           classContainer:"each-project",
                           classDesktop:"desktop1",
                           classMobile:"mobile1"
@@ -49,6 +52,9 @@ export default new Vuex.Store({
                           id:2,
                           projectName:'Landing Page', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          moreDescription:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          imgDesktop:'../assets/images/github-finder-desktop.png',
+                          imgMobile:'../assets/images/github-finder-mobile.png',
                           classContainer:"each-project",
                           classDesktop:"desktop2",
                           classMobile:"mobile2"
@@ -57,6 +63,9 @@ export default new Vuex.Store({
                           id:3,
                           projectName:'Github Finder', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          moreDescription:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          imgDesktop:'../assets/images/landing-desktop.png',
+                          imgMobile:'../assets/images/landing-mobile.png',
                           classContainer:"each-project",
                           classDesktop:"desktop3",
                           classMobile:"mobile3"
@@ -75,21 +84,6 @@ export default new Vuex.Store({
                         {media:"https://www.facebook.com/", icon:"fab fa-facebook-square"},
                   
                       ],
-
-              // NavLinks Component
-
-
-
-  
-
-
-
-
-
-
-
-
-
 
   },
   mutations: {

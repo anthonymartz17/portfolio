@@ -44,60 +44,7 @@
 <script>
 
 export default {
-  // mounted(){
-  //     // this.handlePageAni()
-     
-  // },
-
-  // methods:{
-  //   handlePageAni(){
-  //       this.pageAni = !this.pageAni
-  //   },
-
-  // beforeEnter(el){
-    
-  //     if(el.id == 1){
-  //       el.style.transitionDelay=`.${el.id}s`
-  //     }
-  //     else if(el.id == 2){
-  //       el.style.transitionDelay=`.${el.id}s`
-  //     }
-  //     else if(el.id == 3){
-  //       el.style.transitionDelay=`.${el.id}s`
-  //     }
-  //     else if(el.id == 4){
-  //       el.style.transitionDelay=`.5s`
-  //     }
-   
-  //   },
-
-
-
-
-  // },
-  // data(){
-  //   return{
-  //     // about component content
-  //     pageAni:false,
-  //     aboutHeading:'About Me',
-  //     aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat.',
-  //     techSkills:[
-        
-  //       {skill:"JavaScript", color:'#f0db4f', iconClass:"fab fa-js", background:'#323330'},
-  //       {skill:"Vue.js/Vuex", color:'#42b883', iconClass:"fab fa-vuejs"},
-  //       {skill:"Sass", color:'#cc6699', iconClass:"fab fa-sass"},
-  //       {skill:"CSS3", color:'#264de4', iconClass:"fab fa-css3"},
-  //       {skill:"Bootstrap", color:'#563d7c', iconClass:"fab fa-bootstrap"},
-  //       {skill:"HTML5", color:'#e34c26', iconClass:"fab fa-html5"},
-        
-  //       ],
-
-
-
-  //     otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"]
-            
-  //   }
-  // }
+ 
 
 }
 </script>

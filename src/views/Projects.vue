@@ -5,7 +5,7 @@
 
   <div class="projects-section-container">
    
-    <div :class="[project.classContainer]" v-for="(project,key) in projects" :key="key">
+    <div :class="[project.classContainer]" v-for="(project,key) in $store.state.projects" :key="key">
       <div :class="project.classDesktop"></div>
       <transition name="slideDown" appear>
       <div :class="project.classMobile"></div>
@@ -28,41 +28,12 @@
 <script>
 
 export default {
-  data(){
-    return{
-      // Projects Component
-      projects:[
-        {
-          id:1,
-          projectName:'To Do App', 
-          description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-          classContainer:"each-project",
-          classDesktop:"desktop1",
-          classMobile:"mobile1"
-          },
-        {
-          id:2,
-          projectName:'Landing Page', 
-          description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-          classContainer:"each-project",
-          classDesktop:"desktop2",
-          classMobile:"mobile2"
-          },
-          {
-             id:3,
-            projectName:'Github Finder', 
-            description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-            classContainer:"each-project",
-            classDesktop:"desktop3",
-            classMobile:"mobile3"
-            },
-      ]
-    }
-  },
+  
+
   methods:{
     showMore(project){
-      this.$emit('showMoreEvent',project)
-       
+      this.$emit('showMoreAboutProject',project)
+      
     }
   }
 

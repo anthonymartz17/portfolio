@@ -1,7 +1,15 @@
 <template>
   <div>
-    <div class="modal"> 
-      <div class="modal-project">
+   
+      <div class="modal" @click="showMore($event)" > 
+
+      <transition
+      enter-active-class="animate__animated animate__zoomIn animate__faster"
+      leave-active-class="animate__animated animate__zoomOut"
+      
+      
+      >
+        <div class="modal-project" v-show="$store.state.moreAboutProject">
         <div class="modal-project-img">
             <img src="" alt="">
         </div>
@@ -9,16 +17,27 @@
 
         </div>
 
-      </div>
+        </div>
+      </transition>
 
-   </div>
+    </div>
+    
 
   </div>
 </template>
 
 <script>
 export default {
-  
+  methods:{
+    showMore(e){
+      if(e.target.className == 'modal'){
+        this.$store.commit('showMoreAboutProject')
+        console.log(this.$store.state.moreAboutProject)
+        // console.log(this.$store.state.projectInModal)
+      }
+      
+    }
+  }
  
 
 }
@@ -37,6 +56,7 @@ export default {
 
 }
 .modal-project{
+ 
   background: $light;
   width: 80%;
   height: 90%;

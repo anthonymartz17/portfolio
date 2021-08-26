@@ -32,8 +32,7 @@ export default {
 
   methods:{
     showMore(project){
-      this.$emit('showMoreAboutProject',project)
-      
+      this.$store.commit('showMoreAboutProject',project)
     }
   }
 
@@ -156,13 +155,16 @@ $mobileImg:(
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  // pointer-events: none;
 
 
     &:hover{
       opacity: 1;
+      // pointer-events: auto;
 
     }
   }
+
 
 
   h3{
@@ -203,9 +205,11 @@ $mobileImg:(
       padding: .5em 1em;
       cursor: pointer;
       transition: all 250ms ease-in-out;
+     
     }
     a:hover{
       background: $light-primary;
+      
       
     }
   }

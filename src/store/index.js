@@ -12,7 +12,7 @@ export default new Vuex.Store({
             mobile:false,
             mobileNav:false,
             showName:false,
-            moreAboutProject: false,
+           
             
             links:[
                     {id:1, link:"Home", class:"fas fa-home", name:'Home'},
@@ -37,6 +37,8 @@ export default new Vuex.Store({
             otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"],
 
             // Projects Component
+            moreAboutProject: false,
+            projectInModal:{},
             projects:[
                       {   id:1,
                           projectName:'To Do App', 
@@ -122,6 +124,12 @@ export default new Vuex.Store({
                   }
        
                 },
+                showMoreAboutProject(state,project){
+                  state.projectInModal = project
+                  state.moreAboutProject = !state.moreAboutProject
+
+                 
+                }
   },
   actions: {
   },

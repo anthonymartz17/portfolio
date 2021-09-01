@@ -30,7 +30,6 @@ export default new Vuex.Store({
                         {skill:"Vue.js/Vuex", color:'#42b883', iconClass:"fab fa-vuejs"},
                         {skill:"Sass", color:'#cc6699', iconClass:"fab fa-sass"},
                         {skill:"CSS3", color:'#264de4', iconClass:"fab fa-css3"},
-                        {skill:"Bootstrap", color:'#563d7c', iconClass:"fab fa-bootstrap"},
                         {skill:"HTML5", color:'#e34c26', iconClass:"fab fa-html5"},
                       ],
 
@@ -38,7 +37,7 @@ export default new Vuex.Store({
 
             // Projects Component
             moreAboutProject: false,
-            projectInModal:{},
+            projectInModal:null,
             projects:[
                       {   id:1,
                           projectName:'To Do App', 
@@ -125,8 +124,14 @@ export default new Vuex.Store({
        
                 },
                 showMoreAboutProject(state,project){
-                  state.projectInModal = project
                   state.moreAboutProject = !state.moreAboutProject
+
+                  console.log(state.moreAboutProject)
+                  if(project){
+                    state.projectInModal = project
+                    
+                  }
+
 
                  
                 }

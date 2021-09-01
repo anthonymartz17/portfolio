@@ -12,18 +12,16 @@
 </template>
 
 <script>
+ import {mapMutations} from 'vuex';
+
 export default {
 
   methods:{
 
-    // sends current route to the root component to update the showName property
-    isHome(){
-              this.$store.commit('isHome',this.$route)
-    },
-    
-    toggleMobileMenu(){
-                        this.$store.commit('toggleMobileMenu')
-    }
+    ...mapMutations([
+      'isHome',
+      'toggleMobileMenu'
+    ])
   }
 
 }

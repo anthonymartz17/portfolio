@@ -1,11 +1,6 @@
 <template>
-  <div>
-    <transition 
-     enter-active-class="animate__animated animate__fadeIn animate__faster"
-     leave-active-class="animate__animated animate__fadeOut animate__faster"
-      >
+  <div id="app">
    <ModalProjects v-show="$store.state.moreAboutProject"/>
-   </transition>
     <div class="container">
         <!-- modal for mobile view menu -->
         <transition 
@@ -72,6 +67,7 @@
   import Navlinks from './components/Navlinks.vue';
   import Footer from './components/Footer.vue';
   import ModalProjects from './components/Modal-projects.vue';
+  import {mapMutations} from 'vuex';
 
   export default {
     components:{
@@ -91,28 +87,13 @@
    
  
     methods:{
-      // on page load, checks if current route is home to hide big name on header
-         isHome(){
-           this.$store.commit('isHome',this.$route)
-           
-         },
-               
-        //  shows mobile view
-         handleDesktopMenu(){
-                              this.$store.commit('handleDesktopMenu')
-          
-         },
 
-
-         toggleMobileMenu(){
-                             this.$store.commit('toggleMobileMenu')
-          },
-
-         
-
-          
-         
-          
+      ...mapMutations([
+        'isHome',
+        'handleDesktopMenu',
+        'toggleMobileMenu'
+        
+        ])         
       }
 
 }

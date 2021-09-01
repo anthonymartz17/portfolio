@@ -1,17 +1,23 @@
 <template>
-  <div>
-   
-      <div class="modal" @click="showMore($event)" > 
 
+      <transition
+      enter-active-class="animate__animated animate__fadeIn animate__faster"
+      leave-active-class="animate__animated animate__fadeOut"
+      >
+   
+      <div class="modal" @click="showMore($event)" v-show="$store.state.moreAboutProject"> 
+     
       <transition
       enter-active-class="animate__animated animate__zoomIn animate__faster"
       leave-active-class="animate__animated animate__zoomOut"
       
       
       >
-        <div class="modal-project" v-show="$store.state.moreAboutProject">
+        <div class="modal-project"  v-show="$store.state.moreAboutProject">
+        <i class="far fa-window-close" @click="showMore($event)"></i>
         <div class="modal-project-img">
-            <img src="" alt="">
+
+            <img class="img" :src="img" alt="">
         </div>
         <div class="modal-project-description">
 
@@ -21,21 +27,30 @@
       </transition>
 
     </div>
-    
-
-  </div>
+      </transition>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+      img: 'https://cdni.llbean.net/is/image/wim/240624_1_41?hei=764&wid=665&resMode=sharp2&defaultImage=llbstage/A0211793_2'
+    }
+  },
+  
   methods:{
     showMore(e){
-      if(e.target.className == 'modal'){
+      if(e.target.className == 'modal' || e.target.classList.contains('fa-window-close')){
         this.$store.commit('showMoreAboutProject')
-        console.log(this.$store.state.moreAboutProject)
-        // console.log(this.$store.state.projectInModal)
+      
       }
       
+    },
+    
+  },
+  computed:{
+    moreProject(){
+      return this.$store.state.projectInModal.imgDesktop
     }
   }
  
@@ -44,6 +59,23 @@ export default {
 </script>
 
 <style lang="scss">
+.fa-window-close{
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  color: $dark;
+  font-size: 2em;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    color: $primary;
+  }
+}
+
+img{
+  max-width: 100%;
+}
 
 .modal{
   z-index: 2;
@@ -56,21 +88,22 @@ export default {
 
 }
 .modal-project{
- 
+ position: relative;
   background: $light;
   width: 80%;
   height: 90%;
   display: flex;
   flex-wrap: wrap;
+  background: $white;
 
 
   &-img{
      flex: 1 1;
-     background: lightblue;
+    //  background: lightblue;
   }
   &-description{
      flex: 2 1 ;
-     background: lightcoral;
+     
   }
 }
 

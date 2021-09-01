@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="projects-section">
     <h2>My Work</h2>
 
@@ -22,7 +21,7 @@
    
   </div>
    </div>
-  </div>
+ 
 </template>
 
 <script>

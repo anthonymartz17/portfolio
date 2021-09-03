@@ -12,6 +12,7 @@ export default new Vuex.Store({
             mobile:false,
             mobileNav:false,
             showName:false,
+            currentRoute:null,
            
             
             links:[
@@ -95,14 +96,17 @@ export default new Vuex.Store({
                     state.showName = false
                   }
                 },
-                isRouteHome(state,route){
+
+                // isRouteHome(state,r){
+                //   console.log(state)
+                //   console.log(r)
                   
-                  if(route.name == 'Home'){
-                    state.showName = true
-                  }else{
-                    state.showName = false
-                  }
-                },
+                //   // if(route.name == 'Home'){
+                //   //   state.showName = true
+                //   // }else{
+                //   //   state.showName = false
+                //   // }
+                // },
                
 
                 toggleMobileMenu(state){
@@ -123,19 +127,27 @@ export default new Vuex.Store({
                   }
        
                 },
-                showMoreAboutProject(state,project){
-                  state.moreAboutProject = !state.moreAboutProject
+                showMoreAboutProject(state,e){
+                  if(e.$event.target.className == 'btn-read-more' || e.$event.target.className == 'modal' || e.$event.target.classList.contains('fa-window-close')){
 
-                  console.log(state.moreAboutProject)
-                  if(project){
-                    state.projectInModal = project
+                    state.moreAboutProject = !state.moreAboutProject
+
+                  }
+
+
+                  console.log(state)
+                  console.log(e.$event.target)
+                  // console.log(p)
+                  // if(project){
+                  //   state.projectInModal = project
                     
                   }
 
 
                  
-                }
+                // }
   },
+
   actions: {
   },
   modules: {

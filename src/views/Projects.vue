@@ -13,7 +13,7 @@
       <h3>{{project.projectName}}</h3>
       <p>{{project.description}}}</p>
       <div class="btn-container">
-        <a href="#" @click="showMore(project)">Read more</a>
+        <a class="btn-read-more" href="#" @click="showMoreAboutProject({$event,project})">Read more</a>
         <a href="https://www.w3schools.com/cssref/pr_border-color.asp" target="_blank">View Code</a>
       </div>
       </div>
@@ -26,13 +26,12 @@
 
 <script>
 
+  import {mapMutations} from 'vuex';
 export default {
   
 
   methods:{
-    showMore(project){
-      this.$store.commit('showMoreAboutProject',project)
-    }
+    ...mapMutations(['showMoreAboutProject'])
   }
 
 }

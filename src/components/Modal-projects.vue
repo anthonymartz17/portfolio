@@ -5,7 +5,7 @@
       leave-active-class="animate__animated animate__fadeOut"
       >
    
-      <div class="modal" @click="showMore($event)" v-show="$store.state.moreAboutProject"> 
+      <div class="modal" @click="showMoreAboutProject($event)" v-show="$store.state.moreAboutProject"> 
      
       <transition
       enter-active-class="animate__animated animate__zoomIn animate__faster"
@@ -14,7 +14,7 @@
       
       >
         <div class="modal-project"  v-show="$store.state.moreAboutProject">
-        <i class="far fa-window-close" @click="showMore($event)"></i>
+        <i class="far fa-window-close" @click="showMoreAboutProject($event)"></i>
         <div class="modal-project-img">
 
             <img class="img" :src="img" alt="">
@@ -31,6 +31,9 @@
 </template>
 
 <script>
+
+import {mapMutations} from 'vuex'
+
 export default {
   data(){
     return{
@@ -39,13 +42,16 @@ export default {
   },
   
   methods:{
-    showMore(e){
-      if(e.target.className == 'modal' || e.target.classList.contains('fa-window-close')){
-        this.$store.commit('showMoreAboutProject')
+   
+    ...mapMutations(['showMoreAboutProject'])
+  
+    //   if(e.target.className == 'modal' || e.target.classList.contains('fa-window-close')){
+        // this.$store.commit('showMoreAboutProject',e)
+        //  console.log(e)
       
-      }
+    //   }
       
-    },
+
     
   },
   computed:{

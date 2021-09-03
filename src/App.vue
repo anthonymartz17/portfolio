@@ -78,22 +78,23 @@
     
     created(){
     
-     window.addEventListener('resize',this.handleDesktopMenu)
-     window.addEventListener('onload',this.isHome)
-     this.isHome()
-     this.handleDesktopMenu()
+     window.addEventListener('resize',this.handleDesktopMenu);
+     this.isHome(this.$route)
+     this.handleDesktopMenu();
        
     },
    
  
     methods:{
-
+        
       ...mapMutations([
         'isHome',
         'handleDesktopMenu',
-        'toggleMobileMenu'
+        'toggleMobileMenu',
+              
+        ]),    
         
-        ])         
+        
       }
 
 }

@@ -37,15 +37,17 @@ export default new Vuex.Store({
             otherSkills:["Problem-Solving","Adaptability","Resilience","Passion for learning","Empathy","Communication"],
 
             // Projects Component
-            moreAboutProject: false,
+            moreAboutProject: true,
             projectInModal:null,
             projects:[
                       {   id:1,
                           projectName:'To Do App', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-                          moreDescription:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-                          imgDesktop:'../assets/images/todo-desktop.png',
-                          imgMobile:'../assets/images/todo-mobile.png',
+                          moreDescription:'Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!'
+                          ,
+                          imgDesktop:'todo-desktop.png',
+                          imgMobile:'todo-mobile.png',
+                          alt:'to do List',
                           classContainer:"each-project",
                           classDesktop:"desktop1",
                           classMobile:"mobile1"
@@ -54,9 +56,10 @@ export default new Vuex.Store({
                           id:2,
                           projectName:'Landing Page', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-                          moreDescription:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-                          imgDesktop:'../assets/images/github-finder-desktop.png',
-                          imgMobile:'../assets/images/github-finder-mobile.png',
+                          moreDescription:'Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          imgDesktop:'github-finder-desktop.png',
+                          imgMobile:'github-finder-mobile.png',
+                          alt:'a landing page',
                           classContainer:"each-project",
                           classDesktop:"desktop2",
                           classMobile:"mobile2"
@@ -65,9 +68,10 @@ export default new Vuex.Store({
                           id:3,
                           projectName:'Github Finder', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-                          moreDescription:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
-                          imgDesktop:'../assets/images/landing-desktop.png',
-                          imgMobile:'../assets/images/landing-mobile.png',
+                          moreDescription:'Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
+                          imgDesktop:'landing-desktop.png',
+                          imgMobile:'landing-mobile.png',
+                          alt: 'github finder app',
                           classContainer:"each-project",
                           classDesktop:"desktop3",
                           classMobile:"mobile3"
@@ -96,18 +100,7 @@ export default new Vuex.Store({
                     state.showName = false
                   }
                 },
-
-                // isRouteHome(state,r){
-                //   console.log(state)
-                //   console.log(r)
-                  
-                //   // if(route.name == 'Home'){
-                //   //   state.showName = true
-                //   // }else{
-                //   //   state.showName = false
-                //   // }
-                // },
-               
+            
 
                 toggleMobileMenu(state){
                   if(window.innerWidth <= 414){
@@ -128,24 +121,28 @@ export default new Vuex.Store({
        
                 },
                 showMoreAboutProject(state,e){
-                  if(e.$event.target.className == 'btn-read-more' || e.$event.target.className == 'modal' || e.$event.target.classList.contains('fa-window-close')){
+                  if(e.$event.target.className == 'btn-read-more'){
 
-                    state.moreAboutProject = !state.moreAboutProject
-
+                    state.moreAboutProject = true
+                    state.projectInModal = e.project
                   }
+                },
+                hideMoreAboutProject(state,e){
+                  if(e.target.classList.contains('modal') || e.target.classList.contains('fa-window-close')){
 
-
-                  console.log(state)
-                  console.log(e.$event.target)
-                  // console.log(p)
-                  // if(project){
-                  //   state.projectInModal = project
-                    
+                    state.moreAboutProject = false
                   }
+                }
 
 
-                 
-                // }
+
+               
+  },
+
+  getters:{
+            projectInModalComputed(state){
+              return state.projectInModal
+            }
   },
 
   actions: {

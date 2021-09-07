@@ -76,21 +76,6 @@ export default new Vuex.Store({
                   
                       ],
 
-              // NavLinks Component
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
   },
   mutations: {
                 isHome(state,route){

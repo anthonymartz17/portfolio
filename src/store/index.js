@@ -50,11 +50,12 @@ export default new Vuex.Store({
                           alt:'to do List',
                           classContainer:"each-project",
                           classDesktop:"desktop1",
-                          classMobile:"mobile1"
+                          classMobile:"mobile1",
+                          viewCode:"https://github.com/anthonymartz17/MultiList-App"
                         },
                       {
                           id:2,
-                          projectName:'Landing Page', 
+                          projectName:'Github Finder', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
                           moreDescription:'Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
                           imgDesktop:'github-finder-desktop.png',
@@ -62,11 +63,12 @@ export default new Vuex.Store({
                           alt:'a landing page',
                           classContainer:"each-project",
                           classDesktop:"desktop2",
-                          classMobile:"mobile2"
+                          classMobile:"mobile2",
+                          viewCode:"https://github.com/anthonymartz17/github-finder"
                         },
                       {
                           id:3,
-                          projectName:'Github Finder', 
+                          projectName:'Landing Page', 
                           description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
                           moreDescription:'Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem  ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, alias!',
                           imgDesktop:'landing-desktop.png',
@@ -74,7 +76,8 @@ export default new Vuex.Store({
                           alt: 'github finder app',
                           classContainer:"each-project",
                           classDesktop:"desktop3",
-                          classMobile:"mobile3"
+                          classMobile:"mobile3",
+                          viewCode:"https://github.com/anthonymartz17/github-finder"
                         },
                   ],
 

@@ -14,7 +14,7 @@
       <p>{{project.description}}}</p>
       <div class="btn-container">
         <a class="btn-read-more" href="#" @click="showMoreAboutProject({$event,project})">Read more</a>
-        <a href="https://www.w3schools.com/cssref/pr_border-color.asp" target="_blank">View Code</a>
+        <a :href="project.viewCode" target="_blank">View Code</a>
       </div>
       </div>
     </div>

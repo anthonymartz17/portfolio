@@ -14,9 +14,11 @@
         <div class="modal-project"  v-show="$store.state.moreAboutProject">
         <i class="far fa-window-close" @click="hideMoreAboutProject($event)"></i>
         <div class="modal-project-img">
+          
+            <img :src="require(`../assets/images/${projectInModalComputed.imgDesktop}`)" :alt="projectInModalComputed.alt">
+            <img class="img-mobile" :src="require(`../assets/images/${projectInModalComputed.imgMobile}`)" :alt="projectInModalComputed.alt">
+          
 
-          <img :src="require(`../assets/images/${projectInModalComputed.imgDesktop}`)" :alt="projectInModalComputed.alt">
-          <img class="img-mobile" :src="require(`../assets/images/${projectInModalComputed.imgMobile}`)" :alt="projectInModalComputed.alt">
         </div>
         <div class="modal-project-description">
 
@@ -34,8 +36,8 @@
 
 <script>
 
-import {mapMutations} from 'vuex'
-import {mapGetters} from 'vuex'
+import {mapMutations,mapGetters} from 'vuex'
+
 
 
 export default {
@@ -69,13 +71,13 @@ export default {
   position: absolute;
   right: .5em;
   top: .5em;
-  color: $dark;
+  color: $primary;
   font-size: 2em;
   transition: all .2s ease-in-out;
   cursor: pointer;
 
   &:hover{
-    color: $primary;
+    color: $dark ;
   }
 }
 
@@ -114,15 +116,20 @@ img{
 
   &-img{
      flex: 1 1;
-     height: 100%;
-     background: lightcoral;
+     height: 80%;
      padding: 1em;
-     position: relative;
+    //  background: blue;
+      position: relative;
+
+
+    
      
   }
+ 
   .img-mobile{
     position: absolute;
-    top: 20em;
+    top: 9em;
+    left: 0;
   }
   &-description{
      flex: 2 1 ;
@@ -131,7 +138,8 @@ img{
      display: flex;
      flex-direction:column;
      gap: 1em;
-     background: lightblue;
+     margin-right: 2em;
+    //  background: lightblue;
 
      @include mobile{
        height: auto;

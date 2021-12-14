@@ -1,2 +1,2 @@
 # portfolio
-This is my personal portfolio where potential employers will be able to have a look at the projects I have created and/or worked on. 
+This project was created as a way of presenting myself and my programming skills, to any potential employer interested in my services. The technologies implemented in this project were vue.js and sass.

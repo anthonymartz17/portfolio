@@ -1,2 +1,2 @@
-# portfolio
-This project was created as a way of presenting myself and my programming skills, to any potential employer interested in my services. The technologies implemented in this project were vue.js and sass.
+# Portfolio Website
+Created as a way of presenting myself and my projects to any potential employer,this portfolio includes technologies such as vue.js and sass. The animations and transitions are handled through vue animations and animate.css

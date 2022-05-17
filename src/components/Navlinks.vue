@@ -1,14 +1,15 @@
 <template>
-  <div>
+  <nav>
+    
     <ul class="side-bar-links" v-for="(link,key) in $store.state.links" :key="key">
       <li @click="toggleMobileMenu(); isHome($route)">
-       <router-link :to="{name:link.name}" :class="{tabs:true}">
+       <router-link :to="{name:link.name}" class="tabs">
           <i :class="[link.class]"></i>
           <p> {{link.link}}</p>
        </router-link>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <script>

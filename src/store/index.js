@@ -25,7 +25,7 @@ export default new Vuex.Store({
             // about component 
             pageAni:false,
             aboutHeading:'About Me',
-            aboutPersonalDescription:'She ran desperately towards the room, scared, she had heard the violent knocks on the desk and the unusual screaming that resonated in an always quiet house. By the time she got to the room, There I was, lying on the chair, with my head thrown back over the top of the back of the seat.',
+            aboutPersonalDescription:'Hi, my name is Antonio and I love walking on the edge of my limits, feeling the bitter pressure of a challenge and the temporary defeat that might come along with it, but I love even more the sweet taste of victory and accomplishment that comes through perseverance.',
             techSkills:[
                         {skill:"JavaScript", color:'#f0db4f', iconClass:"fab fa-js", background:'#323330'},
                         {skill:"Vue.js/Vuex", color:'#42b883', iconClass:"fab fa-vuejs"},

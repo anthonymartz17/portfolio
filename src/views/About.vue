@@ -15,8 +15,6 @@
            class="about-skills-list tech-list"
            tag="ul"
            appear
-        
-           
            >
             <li v-for="(skill, key) in $store.state.techSkills" :key="key" :id="key">
               <i :class="skill.iconClass" :style="{ fontSize:'2em'}"></i>

@@ -71,13 +71,13 @@ export default {
   position: absolute;
   right: .5em;
   top: .5em;
-  color: $primary;
+  color: $dark;
   font-size: 2em;
   transition: all .2s ease-in-out;
   cursor: pointer;
 
   &:hover{
-    color: $dark ;
+    color: $primary ;
   }
 }
 
@@ -120,6 +120,7 @@ img{
      padding: 1em;
     //  background: blue;
       position: relative;
+      
 
 
     
@@ -132,14 +133,14 @@ img{
     left: 0;
   }
   &-description{
-     flex: 2 1 ;
+    flex: 2 1 ;
      padding: 1em;
      height: 80%;
      display: flex;
      flex-direction:column;
      gap: 1em;
      margin-right: 2em;
-    //  background: lightblue;
+    
 
      @include mobile{
        height: auto;

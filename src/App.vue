@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-   <ModalProjects v-show="$store.state.moreAboutProject"/>
+    <ModalProjects v-show="$store.state.moreAboutProject"/>
     <div class="container">
         <!-- modal for mobile view menu -->
         <transition 
         enter-active-class="animate__animated animate__fadeIn animate__faster"
         leave-active-class="animate__animated animate__fadeOut animate__faster"
         >
+       
         <div class="modal-mobile-nav" v-show="$store.state.mobileNav" @click="toggleMobileMenu" ></div>
         </transition>
+        
       <header>
-        <i @click="toggleMobileMenu" class="fas fa-bars " v-show="$store.state.mobile"></i>
+        <i 
+        @click="toggleMobileMenu" class="fas fa-bars" v-show="$store.state.mobile"></i>
         <transition 
           enter-active-class="animate__animated animate__slideInUp animate__faster"  
           leave-active-class="animate__animated animate__slideOutDown animate__faster"
@@ -18,7 +21,7 @@
         <h1 class="my-huge-name" v-show="!$store.state.showName"> Antonio Martinez</h1>
         </transition>
       </header>
-       
+        
        <aside class="side-nav" v-show="!$store.state.mobile">
           <div class="logo">
             <p>Martz</p>
@@ -35,6 +38,7 @@
         
         
         >
+       
         <aside class="side-nav" v-show="$store.state.mobileNav">
           <div class="logo">
             <p>Martz</p>
@@ -44,6 +48,7 @@
           </nav>
         </aside>
         </transition>
+        
       <main>
         
         <transition
@@ -54,10 +59,11 @@
         <routerView/>
         </transition>
       </main>
+      
       <footer>
         <Footer/>
       </footer>
-    </div>
+    </div> 
   </div> 
 </template>
 
@@ -102,7 +108,9 @@
 
 <style lang="scss">
      
-
+.test{
+ border:solid  1px black ;
+}
 .toggleIt-enter,.toggleIt-leave-to{
   transform: translateY(80px);
 }
@@ -143,7 +151,7 @@
 
 
 .container{
-  overflow: hidden;
+  
   min-width: 320px;
   position: relative;
   background: $light;
@@ -160,6 +168,8 @@
   @include mobile{
     grid-template-columns: 0fr 6fr;
     grid-template-rows: .8fr 6fr 1fr;
+    // min-width: 360px;
+    overflow: hidden;
   }
   
   
@@ -177,13 +187,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    
 
    
    .fa-bars{
      
      position: absolute;
      top: 50%;
-     left: 10%;
+     left: 5%;
      transform: translateY(-50%);
      font-size: 1.3em;
      color: $primary;
@@ -199,13 +210,13 @@
   
   .my-huge-name{
     display: inline-block;
-    font:$font-jumboName-desktop;
+    font:$font-jumboName-mobile;
      opacity: .08;
 
     @include mobile{
     
       font:$font-jumboName-mobile;
-      padding-left: 1em;
+      // padding-left: 1em;
       
       
     }

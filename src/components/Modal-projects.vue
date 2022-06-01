@@ -56,6 +56,7 @@ export default {
   },
   computed:{
     moreProject(){
+      
       return this.$store.state.projectInModal.imgDesktop
     },
 

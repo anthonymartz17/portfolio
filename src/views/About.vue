@@ -84,6 +84,12 @@ export default {
   height: auto;
  
  }
+ @include tablet{
+   margin: 2em;
+   height: auto;
+  //  overflow-y: auto;
+ 
+ }
    
 h2{
 
@@ -105,7 +111,6 @@ h2{
   }
 
   .about-skills{
-   
     display: flex;
     justify-content: space-evenly;
     gap: 5em;
@@ -115,6 +120,10 @@ h2{
    @include mobile{
      flex-direction: column;
      gap: 3em;
+   }
+   @include tablet{
+     flex-direction: column;
+     gap: 1em;
    }
     
     &-title{
@@ -132,25 +141,27 @@ h2{
       @include mobile{
         padding-block: 1em;
       }
+      @include tablet{
+        padding-block: 2em;
+      }
     }
 
      &-list {
       //  background: red;
       padding: 1em;
        display: grid;
-      
        align-items: baseline;
        border-right: 1px solid lighten($dark, 40%);
        text-align: start;
        flex: 1; 
        @include mobile{
-        // padding-left: 4em;
         border: none;
-        // align-self: center;
         width: 70%;
         height: 50vh;
-      
-        
+      }
+       @include tablet{
+       justify-content: center;
+      //  height: 80vh;
       }
     }
     
@@ -178,6 +189,11 @@ h2{
 
       @include mobile{
 
+        flex-direction: column;
+        gap: 1em;
+   }
+      @include tablet{
+      
         flex-direction: column;
         gap: 1em;
    }

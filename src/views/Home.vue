@@ -124,9 +124,11 @@ export default {
   position: relative;
    @include mobile{
    flex-direction: column;
-   
- 
-  
+
+  }
+   @include tablet{
+   flex-direction: column;
+
   }
  
 
@@ -151,7 +153,13 @@ export default {
    padding: 0;
    align-items: center;
    flex: 1;
-  
+  }
+    @include tablet{
+   width: 100%;
+   position: static;
+   padding: 0;
+   align-items: center;
+   flex: 1;
   }
 
  &-name-container{
@@ -208,6 +216,14 @@ font-size: 1.7em;
   z-index: 0;
   
   }
+  @include tablet{
+
+  width:100% ;
+  margin: 0;
+  flex: 1.5;
+  z-index: 0;
+  
+  }
 
   
  
@@ -229,6 +245,15 @@ font-size: 1.7em;
   color: $dark;
   
    @include mobile{
+  justify-content: center;
+  justify-self: center;
+   font-size: 1em;
+   width: 100%;
+   padding: 0;
+   position: static;
+   flex: 1;
+  }
+   @include tablet{
   justify-content: center;
   justify-self: center;
    font-size: 1em;

@@ -203,29 +203,32 @@
    }
 
    }
+   @include tablet{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-   
- 
+   }
 
   
-  .my-huge-name{
+}
+.my-huge-name{
     display: inline-block;
-    font:$font-jumboName-mobile;
+    font:$font-jumboName-desktop;
      opacity: .08;
 
-    @include mobile{
-    
-      font:$font-jumboName-mobile;
-      // padding-left: 1em;
-      
-      
+    @include tablet{
+     font:$font-jumboName-tablet;
+     
     }
-   
+     @include mobile{
+     font:$font-jumboName-mobile;
+  
+    }
     
     
   }
-  
-}
 
   .side-nav{
   
@@ -271,6 +274,9 @@
    @include mobile{
      overflow-y: auto;
    }
+   @include tablet{
+     overflow-y: auto;
+   }
   
   }
   footer{
@@ -281,16 +287,7 @@
 
 }
 .sect1{
- 
-  //  order: 2;
-  // flex: 2;
-  // background: $sunset-brown;
 
-  // .display-screen{
-  //    position: relative;
-  //    width: 100%;
-     
-  // }
   p{
     font: $font-text
   }

@@ -4,14 +4,14 @@
 
   <div class="projects-section-container">
    
-    <div :class="[project.classContainer]" v-for="(project,key) in $store.state.projects" :key="key">
+     <div :class="[project.classContainer]" v-for="(project,key) in $store.state.projects" :key="key">
       <div :class="project.classDesktop"></div>
       <transition name="slideDown" appear>
       <div :class="project.classMobile"></div>
       </transition>
       <div class="overlay">
       <h3>{{project.projectName}}</h3>
-      <p>{{project.description}}}</p>
+      <p>{{project.description}}</p>
       <div class="btn-container">
         <a class="btn-read-more" href="#" @click="showMoreAboutProject({$event,project})">Read more</a>
         <a :href="project.viewCode" target="_blank">View Code</a>
@@ -64,11 +64,15 @@ export default {
   justify-content: space-evenly;
   gap: 1em;
   height: 100%;
-  // background: lightgray;
   
 
   
   @include mobile{
+       height: auto;
+       display: block;
+       padding-block: 1em;
+      }
+  @include tablet{
        height: auto;
        display: block;
        padding-block: 1em;

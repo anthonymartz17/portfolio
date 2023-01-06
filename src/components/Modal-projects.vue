@@ -15,7 +15,7 @@
         <i class="far fa-window-close" @click="hideMoreAboutProject($event)"></i>
         <div class="modal-project-img">
           
-            <img :src="require(`../assets/images/${projectInModalComputed.imgDesktop}`)" :alt="projectInModalComputed.alt">
+            <img  :src="require(`../assets/images/${projectInModalComputed.imgDesktop}`)" :alt="projectInModalComputed.alt">
             <img class="img-mobile" :src="require(`../assets/images/${projectInModalComputed.imgMobile}`)" :alt="projectInModalComputed.alt">
           
 
@@ -84,7 +84,9 @@ export default {
 
 img{
   max-width: 100%;
+
 }
+
 
 .modal{
   z-index: 2;
@@ -104,13 +106,13 @@ img{
   height: 90%;
   display: flex;
   align-items: center;
-  // flex-wrap: wrap;
   background: $white;
+  
 
   @include mobile{
     flex-direction: column;
     overflow-y: auto;
-    padding-top: 5em;
+    // padding-top: 2em;
   }
 
 
@@ -119,10 +121,12 @@ img{
      flex: 1 1;
      height: 80%;
      padding: 1em;
-    //  background: blue;
-      position: relative;
+     position: relative;
       
-
+  @include mobile{
+    margin-bottom: 4.5em;
+    
+  }
 
     
      
@@ -132,6 +136,11 @@ img{
     position: absolute;
     top: 9em;
     left: 0;
+    @include mobile{
+        
+        top: 7em;
+        left: 0;
+     }
   }
   &-description{
     flex: 2 1 ;
